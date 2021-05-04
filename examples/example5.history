@@ -1,0 +1,51 @@
+tectoplot -n -r 120.5 120.8 22.4 23 -t BEST -tsl -tsky 0.2 -tx -pgo -pgs 0.1 -pss 4 -zcat ISC -z -c ORIGIN -legend onmap -author -command -zcrescale 1 3 4 -eqlabel 5.5 mag -o example5
+gmt psxy -T -X1i -Yc -Ve -K -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i
+gmt psxy -T -Y-0.25i -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -O -K -Ve
+gmt psxy -T -X0i -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -O -K -Ve
+gmt pslegend author.txt -Dx0/0+w1.23500000000000000000i+jTL+l1.1 -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -O -K -Ve
+gmt pstext -R0/4/0/8 -Jx1i -O -K -N -M -F+a+f+j @GMTAPI@-S-I-D-D-X-N-000001 --GMT_HISTORY=false
+gmt psxy -T -X1.72900000000000000000i -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -O -K -Ve
+gmt pslegend command.txt -DjBL+w2.71700000000000000000i+jTL+l1.1 -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -O -K -Ve
+gmt pstext -R0/4/0/8 -Jx1i -O -K -N -M -F+a+f+j @GMTAPI@-S-I-D-D-X-N-000001 --GMT_HISTORY=false
+gmt psxy -T -Y0.25i -X-1.72900000000000000000i -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -O -K -Ve
+gmt psxy -T -X0i -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -O -K -Ve
+gmt grdimage topo/intensity.tif -t0 -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -O -K -Ve
+gmt psxy seismicity/eqs_scaled.txt -C/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -i0,1,2,3+s1 -W0.25p,black -Sc -t0 -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -O -K -Ve
+gmt psmeca -Egray40 -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_thrust.txt -L0p,black -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -O -K -Ve
+gmt psmeca -Ewhite -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_normal.txt -L0p,black -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -O -K -Ve
+gmt psmeca -Egray80 -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_strikeslip.txt -L0p,black -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -O -K -Ve
+gmt pstext -Dj0.1i/0.2i -Gwhite -F+f+a+j -W0.5p,black -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -O -K -Ve
+gmt pstext -Dj0.1i/0.2i -Gwhite -F+f+a+j -W0.5p,black -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -O -K -Ve
+gmt psbasemap -Bxa0.1g0.1 -Bya0.1g0.1 -BWESN -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -O -K -Ve
+gmt psimage -Dx0i/8.66867666666666666666i+w3.49887i maplegend.eps -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -O -K -Ve
+gmt psxy -T -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -X1i -Yc -K -Ve
+gmt psimage -Dx2.1i/8.66867666666666666666i+w1.35837i seissymbol.eps -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -O -K -Ve
+gmt psxy -T -X0i -Yc -Ve -K -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i
+gmt psxy -W0.5p,black -Gwhite -i0,1,2+s1 -Sc -t0 -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -O -K -Ve
+gmt pstext -F+f6p,Helvetica,black+jCB -Ve -JQ120.65000000000000000000/4i -R120.5/120.8/22.4/23 -Y0.13i -O -K
+gmt psxy -W0.5p,black -Gwhite -i0,1,2+s1 -Sc -t0 -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -O -K -Y-0.13i -X0.25i -Ve
+gmt pstext -F+f6p,Helvetica,black+jCB -Ve -JQ120.65000000000000000000/4i -R120.5/120.8/22.4/23 -Y0.13i -O -K
+gmt psxy -W0.5p,black -Gwhite -i0,1,2+s1 -Sc -t0 -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -O -K -Y-0.13i -X0.25i -Ve
+gmt pstext -F+f6p,Helvetica,black+jCB -Ve -JQ120.65000000000000000000/4i -R120.5/120.8/22.4/23 -Y0.14i -O -K
+gmt psxy -W0.5p,black -Gwhite -i0,1,2+s1 -Sc -t0 -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -O -K -Y-0.13i -X0.25i -Ve
+gmt pstext -F+f6p,Helvetica,black+jCB -Ve -JQ120.65000000000000000000/4i -R120.5/120.8/22.4/23 -Y0.15i -O -K
+gmt psxy -W0.5p,black -Gwhite -i0,1,2+s1 -Sc -t0 -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -O -K -Y-0.13i -X0.3i -Ve
+gmt pstext -F+f6p,Helvetica,black+jCB -Ve -JQ120.65000000000000000000/4i -R120.5/120.8/22.4/23 -Y0.16i -O
+gmt psimage -Dx2.1i/9.16117666666666666666i+w1.01125i mecaleg.eps -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -O -K -Ve
+gmt psxy -T -X0i -Yc -Ve -K -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i
+gmt psmeca -Ewhite -L0.25p,black -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Sm.07i/0 -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -O -K -Ve
+gmt pstext -F+f6p,Helvetica,black+jCB -Ve -JQ120.65000000000000000000/4i -R120.5/120.8/22.4/23 -Y0.14i -O -K
+gmt psmeca -Egray80 -L0.25p,black -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Sm.07i/0 -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -O -K -X0.35i -Y-0.15i -Ve
+gmt pstext -F+f6p,Helvetica,black+jCB -Ve -JQ120.65000000000000000000/4i -R120.5/120.8/22.4/23 -Y0.15i -O -K
+gmt psmeca -Egray40 -L0.25p,black -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Sm.07i/0 -X0.35i -Y-0.15i -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -O -K -Ve
+gmt pstext -F+f6p,Helvetica,black+jCB -Ve -JQ120.65000000000000000000/4i -R120.5/120.8/22.4/23 -Y0.16i -O
+gmt psimage -Dx2.1i/9.65417666666666666666i+w0.351588i eqlabel.eps -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -O -K -Ve
+gmt psxy -T -X0i -Yc -Ve -K -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i
+gmt pstext -Gwhite -W0.5p,black -F+f10p,Helvetica,black+jLB -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -O -Ve
+gmt pslegend datasourceslegend.txt -Dx0.0i/8.50201i+w2i+w4i+jBL -C0.05i/0.05i -JQ120.65000000000000000000/4i -R120.5/120.8/22.4/23 -O -K -Ve
+gmt pstext -R0/4/0/8 -Jx1i -O -K -N -M -F+a+f+j @GMTAPI@-S-I-D-D-X-N-000001 --GMT_HISTORY=false
+gmt pslegend legendbars.txt -Dx0i/8.66867666666666666666i+w2i+jBL -C0.05i/0.05i -JQ120.65000000000000000000/4i -R120.5/120.8/22.4/23 -O -K -Ve
+gmt psscale -C/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/topo.cpt -O -K -Dx1i/0.7i+w1.6i/0.1i+malu+h+jTC '-Bxa2f1+lElevation (km)' -W0.001 --GMT_HISTORY=false
+gmt psscale -Ccpts/seisdepth_nodeepest.cpt -O -K -Dx1i/0.275i+w1.6i/0.1i+malu+e+h+jTC '-Bxaf+lEarthquake / slab depth (km)' --GMT_HISTORY=false
+gmt psxy -T -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -O -Ve
+gmt psxy -T -R120.5/120.8/22.4/23 -JQ120.65000000000000000000/4i -O -Ve

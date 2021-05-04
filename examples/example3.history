@@ -1,0 +1,48 @@
+tectoplot -n -t -gres 120 -b c -z -c -a f -command -title Solomon Islands seismicity -legend onmap -author -o example3
+gmt psxy -T -X1i -Yc -Ve -K -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i
+gmt psxy -T -Y-0.25i -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i -O -K -Ve
+gmt psxy -T -X0i -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i -O -K -Ve
+gmt pslegend author.txt -Dx0/0+w1.96756000000000000000i+jTL+l1.1 -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i -O -K -Ve
+gmt pstext -R0/7/0/6.5625 -Jx1i -O -K -N -M -F+a+f+j @GMTAPI@-S-I-D-D-X-N-000001 --GMT_HISTORY=false
+gmt psxy -T -X2.75458400000000000000i -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i -O -K -Ve
+gmt pslegend command.txt -DjBL+w4.32863200000000000000i+jTL+l1.1 -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i -O -K -Ve
+gmt pstext -R0/7/0/6.5625 -Jx1i -O -K -N -M -F+a+f+j @GMTAPI@-S-I-D-D-X-N-000001 --GMT_HISTORY=false
+gmt psxy -T -Y0.25i -X-2.75458400000000000000i -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i -O -K -Ve
+gmt psxy -T -X0i -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i -O -K -Ve
+gmt grdimage topo/dem.nc -I+d -C/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/topo.cpt -E120 -t0 -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i -O -K -Ve
+gmt psxy contourtmp.dat -C/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -W0.5p+z -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i -O -K -Ve
+gmt psxy seismicity/eqs_scaled.txt -C/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -i0,1,2,3+s1 -W0.25p,black -Sc -t0 -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i -O -K -Ve
+gmt psmeca -Egray40 -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_thrust.txt -L0p,black -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i -O -K -Ve
+gmt psmeca -Ewhite -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_normal.txt -L0p,black -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i -O -K -Ve
+gmt psmeca -Egray80 -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_strikeslip.txt -L0p,black -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i -O -K -Ve
+gmt pscoast -Df -W1/0.5p,black -W2/0.2p,black -A100 -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i -O -K -Ve
+gmt psbasemap -Bxa1 -Bya1 '-BWESN+t"Solomon Islands seismicity"' -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i -O -K -Ve
+gmt psimage -Dx0i/7.68717666666666666666i+w4.45276i maplegend.eps -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i -O -K -Ve
+gmt psxy -T -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i -X1i -Yc -K -Ve
+gmt psimage -Dx2.1i/7.68717666666666666666i+w1.35004i seissymbol.eps -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i -O -K -Ve
+gmt psxy -T -X0i -Yc -Ve -K -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i
+gmt psxy -W0.5p,black -Gwhite -i0,1,2+s1 -Sc -t0 -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i -O -K -Ve
+gmt pstext -F+f6p,Helvetica,black+jCB -Ve -JQ158.00000000000000000000/7i -R154/162/-12/-4.5 -Y0.13i -O -K
+gmt psxy -W0.5p,black -Gwhite -i0,1,2+s1 -Sc -t0 -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i -O -K -Y-0.13i -X0.25i -Ve
+gmt pstext -F+f6p,Helvetica,black+jCB -Ve -JQ158.00000000000000000000/7i -R154/162/-12/-4.5 -Y0.13i -O -K
+gmt psxy -W0.5p,black -Gwhite -i0,1,2+s1 -Sc -t0 -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i -O -K -Y-0.13i -X0.25i -Ve
+gmt pstext -F+f6p,Helvetica,black+jCB -Ve -JQ158.00000000000000000000/7i -R154/162/-12/-4.5 -Y0.14i -O -K
+gmt psxy -W0.5p,black -Gwhite -i0,1,2+s1 -Sc -t0 -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i -O -K -Y-0.13i -X0.25i -Ve
+gmt pstext -F+f6p,Helvetica,black+jCB -Ve -JQ158.00000000000000000000/7i -R154/162/-12/-4.5 -Y0.15i -O -K
+gmt psxy -W0.5p,black -Gwhite -i0,1,2+s1 -Sc -t0 -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i -O -K -Y-0.13i -X0.3i -Ve
+gmt pstext -F+f6p,Helvetica,black+jCB -Ve -JQ158.00000000000000000000/7i -R154/162/-12/-4.5 -Y0.16i -O
+gmt psimage -Dx2.1i/8.17117666666666666666i+w1.01279i mecaleg.eps -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i -O -K -Ve
+gmt psxy -T -X0i -Yc -Ve -K -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i
+gmt psmeca -Ewhite -L0.25p,black -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Sm.07i/0 -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i -O -K -Ve
+gmt pstext -F+f6p,Helvetica,black+jCB -Ve -JQ158.00000000000000000000/7i -R154/162/-12/-4.5 -Y0.14i -O -K
+gmt psmeca -Egray80 -L0.25p,black -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Sm.07i/0 -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i -O -K -X0.35i -Y-0.15i -Ve
+gmt pstext -F+f6p,Helvetica,black+jCB -Ve -JQ158.00000000000000000000/7i -R154/162/-12/-4.5 -Y0.15i -O -K
+gmt psmeca -Egray40 -L0.25p,black -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Sm.07i/0 -X0.35i -Y-0.15i -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i -O -K -Ve
+gmt pstext -F+f6p,Helvetica,black+jCB -Ve -JQ158.00000000000000000000/7i -R154/162/-12/-4.5 -Y0.16i -O
+gmt pslegend datasourceslegend.txt -Dx0.0i/7.52051i+w2i+w7i+jBL -C0.05i/0.05i -JQ158.00000000000000000000/7i -R154/162/-12/-4.5 -O -K -Ve
+gmt pstext -R0/7/0/6.5625 -Jx1i -O -K -N -M -F+a+f+j @GMTAPI@-S-I-D-D-X-N-000001 --GMT_HISTORY=false
+gmt pslegend legendbars.txt -Dx0i/7.68717666666666666666i+w2i+jBL -C0.05i/0.05i -JQ158.00000000000000000000/7i -R154/162/-12/-4.5 -O -K -Ve
+gmt psscale -C/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/topo.cpt -O -K -Dx1i/0.7i+w1.6i/0.1i+malu+h+jTC '-Bxa2f1+lElevation (km)' -W0.001 --GMT_HISTORY=false
+gmt psscale -Ccpts/seisdepth_nodeepest.cpt -O -K -Dx1i/0.275i+w1.6i/0.1i+malu+e+h+jTC '-Bxaf+lEarthquake / slab depth (km)' --GMT_HISTORY=false
+gmt psxy -T -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i -O -Ve
+gmt psxy -T -R154/162/-12/-4.5 -JQ158.00000000000000000000/7i -O -Ve

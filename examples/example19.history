@@ -1,0 +1,20 @@
+tectoplot -n -r 68 68.3 29.5 29.8 -t BEST -tsl -tsky -tsent 0.8 -ob 120 20 3 -2000 -z -c -eqlabel 7.1 datemag -pss 4 -gres 170 -author -command -o example19
+gmt psxy -T -X1i -Yc -Ve -K -R68/68.3/29.5/29.8 -JQ68.15000000000000000000/4i
+gmt psxy -T -Y-0.25i -R68/68.3/29.5/29.8 -JQ68.15000000000000000000/4i -O -K -Ve
+gmt psxy -T -X0i -R68/68.3/29.5/29.8 -JQ68.15000000000000000000/4i -O -K -Ve
+gmt pslegend author.txt -Dx0/0+w1.27362250000000000000i+jTL+l1.1 -R68/68.3/29.5/29.8 -JQ68.15000000000000000000/4i -O -K -Ve
+gmt pstext -R0/4/0/4 -Jx1i -O -K -N -M -F+a+f+j @GMTAPI@-S-I-D-D-X-N-000001 --GMT_HISTORY=false
+gmt psxy -T -X1.78307150000000000000i -R68/68.3/29.5/29.8 -JQ68.15000000000000000000/4i -O -K -Ve
+gmt pslegend command.txt -DjBL+w2.80196950000000000000i+jTL+l1.1 -R68/68.3/29.5/29.8 -JQ68.15000000000000000000/4i -O -K -Ve
+gmt pstext -R0/4/0/4 -Jx1i -O -K -N -M -F+a+f+j @GMTAPI@-S-I-D-D-X-N-000001 --GMT_HISTORY=false
+gmt psxy -T -Y0.25i -X-1.78307150000000000000i -R68/68.3/29.5/29.8 -JQ68.15000000000000000000/4i -O -K -Ve
+gmt psxy -T -X0i -R68/68.3/29.5/29.8 -JQ68.15000000000000000000/4i -O -K -Ve
+gmt grdimage topo/colored_intensity.tif -E170 -t0 -Rtopo/dem_warp.nc -JQ68.15000000000000000000/4i -O -K -Ve
+gmt psxy seismicity/eqs_scaled.txt -C/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -i0,1,2,3+s1 -W0.25p,black -Sc -t0 -Rtopo/dem_warp.nc -JQ68.15000000000000000000/4i -O -K -Ve
+gmt psmeca -Egray40 -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_thrust.txt -L0p,black -Rtopo/dem_warp.nc -JQ68.15000000000000000000/4i -O -K -Ve
+gmt psmeca -Ewhite -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_normal.txt -L0p,black -Rtopo/dem_warp.nc -JQ68.15000000000000000000/4i -O -K -Ve
+gmt psmeca -Egray80 -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_strikeslip.txt -L0p,black -Rtopo/dem_warp.nc -JQ68.15000000000000000000/4i -O -K -Ve
+gmt pstext -Dj0.1i/0.2i -Gwhite -F+f+a+j -W0.5p,black -Rtopo/dem_warp.nc -JQ68.15000000000000000000/4i -O -K -Ve
+gmt pstext -Dj0.1i/0.2i -Gwhite -F+f+a+j -W0.5p,black -Rtopo/dem_warp.nc -JQ68.15000000000000000000/4i -O -K -Ve
+gmt psbasemap -Bxa0.02 -Bya0.02 -BWESN -Rtopo/dem_warp.nc -JQ68.15000000000000000000/4i -O -K -Ve
+gmt psxy -T -Rtopo/dem_warp.nc -JQ68.15000000000000000000/4i -O -Ve

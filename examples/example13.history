@@ -1,0 +1,138 @@
+tectoplot -n -r g -p MORVEL NNR -pvg -a l -pf 1200 -pa -i 1 -setvars { PLATELINE_COLOR white PLATEVEC_COLOR black PLATEVEC_TRANS 30 PLATEVELRES 0.25d COAST_KM2 1000 } -pe -RJ N -title MORVEL57 NNR velocity -pss 4 -author -command -o example13
+gmt psxy -T -X1i -Yc -Ve -K -Rg -JN0/4i
+gmt psxy -T -Y-0.25i -Rg -JN0/4i -O -K -Ve
+gmt psxy -T -X0i -Rg -JN0/4i -O -K -Ve
+gmt pslegend author.txt -Dx0/0+w1.17756000000000000000i+jTL+l1.1 -Rg -JN0/4i -O -K -Ve
+gmt pstext -R0/4/0/2.02875 -Jx1i -O -K -N -M -F+a+f+j @GMTAPI@-S-I-D-D-X-N-000001 --GMT_HISTORY=false
+gmt psxy -T -X1.64858400000000000000i -Rg -JN0/4i -O -K -Ve
+gmt pslegend command.txt -DjBL+w2.59063200000000000000i+jTL+l1.1 -Rg -JN0/4i -O -K -Ve
+gmt pstext -R0/4/0/2.02875 -Jx1i -O -K -N -M -F+a+f+j @GMTAPI@-S-I-D-D-X-N-000001 --GMT_HISTORY=false
+gmt psxy -T -Y0.25i -X-1.64858400000000000000i -Rg -JN0/4i -O -K -Ve
+gmt psxy -T -X0i -Rg -JN0/4i -O -K -Ve
+gmt grdimage ./pvdir/plate_velocities.nc -Ccpts/platevel.cpt -Rg -JN0/4i -O -K -Ve
+gmt pscoast -Dl -W1/0.5p,black -W2/0.2p,black -A1000 -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/AP_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/AS_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/AT_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/BH_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/BR_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/BR_2_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/BS_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/BU_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/CL_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/CR_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/EA_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/FT_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/GP_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/JZ_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/KE_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/KE_2_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/MA_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/MN_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/MO_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/MS_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/NB_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/ND_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/NH_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/NI_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/OK_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/ON_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/PM_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/SB_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/SL_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/SS_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/TI_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/TO_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/WL_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/am_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/an_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/ar_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/au_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/au_2_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/ca_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/co_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/cp_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/eu_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/in_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/jf_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/lw_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/mq_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/na_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/nba_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/nz_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/pa_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/pa_2_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/pa_3_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/ps_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/ri_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/sa_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/sc_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/sm_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/sr_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/su_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/sw_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psvelo plates/yz_1_platevecs.txt -W0p,black@30 -Gblack@30 -A0.03/0.12/0.06 -Se.01/0.95/0 -L -Rg -JN0/4i -O -K -Ve
+gmt pstext -F+f5p,Helvetica,black+jCM -Rg -JN0/4i -O -K -Ve
+gmt psxy /Users/kylebradley/Dropbox/scripts/tectoplot/platemodels/MORVEL56/MORVEL56boundaries.gmt -W1.0p,white@30 -Rg -JN0/4i -O -K -Ve
+gmt psbasemap -Bxa30 -Bya30 '-BWESN+t"MORVEL57 NNR velocity"' -Rg -JN0/4i -O -K -Ve
+gmt psxy -T -Rg -JN0/4i -O -Ve

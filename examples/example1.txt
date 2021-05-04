@@ -1,0 +1,1 @@
+Example 1: Four global plots in one PDF

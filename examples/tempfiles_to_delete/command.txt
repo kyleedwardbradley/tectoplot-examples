@@ -1,0 +1,1 @@
+T tectoplot -n -command -RJ Sg -80 -10 -t 10m -gres 120 -legend -title Stereo 80W/10S -pos 0i -6.5i -ips ./newtmp/map.ps -pss 5 -a l -o example2

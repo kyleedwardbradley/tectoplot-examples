@@ -1,0 +1,2 @@
+EarthRelief topo retrieved from GMT Oceania server (https://oceania.generic-mapping-tools.org)
+Coastline data: Global Self-consistent, Hierarchical, High-resolution Geography Database, doi:10.1029/96JB00104

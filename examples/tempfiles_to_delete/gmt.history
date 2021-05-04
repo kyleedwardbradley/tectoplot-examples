@@ -1,0 +1,10 @@
+# GMT 6 Session common arguments shelf
+BEGIN GMT 6.1.1
+B	xa2f1+lElevation (km)
+J	S
+JS	S-80/-10/90/5i
+R	g
+X	0i
+Y	-6.5i
+@L	7
+END

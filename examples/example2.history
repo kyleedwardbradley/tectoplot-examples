@@ -1,0 +1,23 @@
+tectoplot -n -command -RJ Sg -80 -10 -t 10m -gres 120 -legend -title Stereo 80W/10S -pos 0i -6.5i -ips ./newtmp/map.ps -pss 5 -a l -o example2
+gmt psxy -T -X1i -Yc -Ve -K -Rg -JS100/10/90/5i
+gmt psxy -T -Y-0.25i -Rg -JS100/10/90/5i -O -K -Ve
+gmt psxy -T -X0i -Rg -JS100/10/90/5i -O -K -Ve
+gmt pslegend command.txt -Dx0/0+w4.52430900000000000000i+jTL+l1.1 -Rg -JS100/10/90/5i -O -K -Ve
+gmt pstext -R0/5/0/5 -Jx1i -O -K -N -M -F+a+f+j @GMTAPI@-S-I-D-D-X-N-000001 --GMT_HISTORY=false
+gmt psxy -T -Y0.25i -Rg -JS100/10/90/5i -O -K -Ve
+gmt psxy -T -X0i -Rg -JS100/10/90/5i -O -K -Ve
+gmt grdimage topo/dem.nc -I+d -C/Users/kylebradley/Dropbox/scripts/tectoplot_examples/examples/newtmp/cpts/topo.cpt -E120 -t0 -Rg -JS100/10/90/5i -O -K -Ve
+gmt pscoast -Dl -W1/0.5p,black -W2/0.2p,black -A100 -Rg -JS100/10/90/5i -O -K -Ve
+gmt psbasemap -Bxa30 -Bya30 '-BWESN+t"Stereo 100E/10N"' -Rg -JS100/10/90/5i -O -K -Ve
+gmt psxy -T -Rg -JS100/10/90/5i -O -K -Ve
+gmt psxy -T -X0i -Y-6.5i -O -Ve -K -Rg -JS-80/-10/90/5i
+gmt psxy -T -Y-0.25i -Rg -JS-80/-10/90/5i -O -K -Ve
+gmt psxy -T -X0i -Rg -JS-80/-10/90/5i -O -K -Ve
+gmt pslegend command.txt -Dx0/0+w4.52430900000000000000i+jTL+l1.1 -Rg -JS-80/-10/90/5i -O -K -Ve
+gmt pstext -R0/5/0/5 -Jx1i -O -K -N -M -F+a+f+j @GMTAPI@-S-I-D-D-X-N-000001 --GMT_HISTORY=false
+gmt psxy -T -Y0.25i -Rg -JS-80/-10/90/5i -O -K -Ve
+gmt psxy -T -X0i -Rg -JS-80/-10/90/5i -O -K -Ve
+gmt grdimage topo/dem.nc -I+d -C/Users/kylebradley/Dropbox/scripts/tectoplot_examples/examples/tempfiles_to_delete/cpts/topo.cpt -E120 -t0 -Rg -JS-80/-10/90/5i -O -K -Ve
+gmt pscoast -Dl -W1/0.5p,black -W2/0.2p,black -A100 -Rg -JS-80/-10/90/5i -O -K -Ve
+gmt psbasemap -Bxa30 -Bya30 '-BWESN+t"Stereo 80W/10S"' -Rg -JS-80/-10/90/5i -O -K -Ve
+gmt psxy -T -Rg -JS-80/-10/90/5i -O -Ve

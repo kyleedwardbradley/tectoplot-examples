@@ -1,0 +1,1382 @@
+TECTOPLOT 00702: tectoplot -n -RJ OA -88 12 122 1200k 400k -t GEBCO20 -gres 120 -c -cmag 6.5 10 -legend onmap -inset 1i 20 3.5i 2.7i -author -command -o example18 -megadebug
++ shift
++ [[ 0 -gt 0 ]]
++ set -- -n -RJ OA -88 12 122 1200k 400k -t GEBCO20 -gres 120 -c -cmag 6.5 10 -legend onmap -inset 1i 20 3.5i 2.7i -author -command -o example18 -megadebug
++ [[ 28 -gt 0 ]]
++ key=-n
++ case ${key} in
++ shift
++ [[ 27 -gt 0 ]]
++ key=-RJ
++ case ${key} in
++ [[ '' -eq 1 ]]
++ ARG1=OA
++ shift
++ case $ARG1 in
++ CENTRALLON=0
++ CENTRALLAT=0
++ ORIENTAZIMUTH=0
++ MAPWIDTHKM=200k
++ MAPHEIGHTKM=100k
++ arg_is_float -88
++ [[ -88 =~ ^[+-]?([0-9]+\.?|[0-9]*\.[0-9]+)$ ]]
++ CENTRALLON=-88
++ shift
++ arg_is_float 12
++ [[ 12 =~ ^[+-]?([0-9]+\.?|[0-9]*\.[0-9]+)$ ]]
++ CENTRALLAT=12
++ shift
++ arg_is_float 122
++ [[ 122 =~ ^[+-]?([0-9]+\.?|[0-9]*\.[0-9]+)$ ]]
++ ORIENTAZIMUTH=122
++ shift
++ [[ 1200k =~ ^[-+]?[0-9]*.*[0-9]+[k]$ ]]
+++ echo 1200k
+++ gawk '{print ($1+0)/2 "k"}'
++ MAPWIDTHKM=600k
++ shift
++ [[ 400k =~ ^[-+]?[0-9]*.*[0-9]+[k]$ ]]
+++ echo 400k
+++ gawk '{print ($1+0)/2 "k"}'
++ MAPHEIGHTKM=200k
++ shift
++ rj+=("-Rk-${MAPWIDTHKM}/${MAPWIDTHKM}/-${MAPHEIGHTKM}/${MAPHEIGHTKM}")
++ rj+=("-JOa${CENTRALLON}/${CENTRALLAT}/${ORIENTAZIMUTH}/${PSSIZE}i")
++ RJSTRING='-Rk-600k/600k/-200k/200k -JOa-88/12/122/7i'
++ recalcregionflag_bounds=1
++ projcoordsflag=1
++ usecustomrjflag=1
++ shift
++ [[ 20 -gt 0 ]]
++ key=-t
++ case ${key} in
++ [[ '' -eq 1 ]]
++ arg_is_flag GEBCO20
++ arg_is_float GEBCO20
++ [[ GEBCO20 =~ ^[+-]?([0-9]+\.?|[0-9]*\.[0-9]+)$ ]]
++ [[ G == [-] ]]
++ [[ -z GEBCO20 ]]
++ BATHYMETRY=GEBCO20
++ shift
++ clipdemflag=1
++ case $BATHYMETRY in
++ plottopo=1
++ GRIDDIR=/Users/kylebradley/Dropbox/TectoplotData/GEBCO20/
++ GRIDFILE=/Users/kylebradley/Dropbox/TectoplotData/GEBCO20/GEBCO_2020.nc
++ plots+=("topo")
++ echo GEBCO
++ echo GEBCO Compilation Group '(2020)' GEBCO 2020 Grid '(doi:10.5285/a29c5465-b138-234d-e053-6c86abc040b9)'
++ [[ - == [{] ]]
++ arg_is_flag -gres
++ arg_is_float -gres
++ [[ -gres =~ ^[+-]?([0-9]+\.?|[0-9]*\.[0-9]+)$ ]]
++ [[ - == [-] ]]
++ return
++ info_msg '[-t]: No topo CPT specified. Using default.'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 5858
+TECTOPLOT 05858: + printf '%s\n' '[-t]: No topo CPT specified. Using default.'
+[-t]: No topo CPT specified. Using default.
++ cpts+=("topo")
++ fasttopoflag=1
+++ echo '1 / 2.5 * 111120'
+++ bc -l
++ MULFACT=44448.00000000000000000000
++ shift
++ [[ 18 -gt 0 ]]
++ key=-gres
++ case ${key} in
++ [[ '' -eq 1 ]]
++ arg_is_positive_float 120
++ [[ 120 =~ ^[+]?([0-9]+\.?|[0-9]*\.[0-9]+)$ ]]
++ info_msg '[-gres]: Set grid output resolution to 120 dpi'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 2922
+TECTOPLOT 02922: + printf '%s\n' '[-gres]: Set grid output resolution to 120 dpi'
+[-gres]: Set grid output resolution to 120 dpi
++ GRID_PRINT_RES=-E120
++ shift
++ shift
++ [[ 16 -gt 0 ]]
++ key=-c
++ case ${key} in
++ [[ '' -eq 1 ]]
++ calccmtflag=1
++ plotcmtfromglobal=1
++ cmtsourcesflag=1
++ arg_is_flag -cmag
++ arg_is_float -cmag
++ [[ -cmag =~ ^[+-]?([0-9]+\.?|[0-9]*\.[0-9]+)$ ]]
++ [[ - == [-] ]]
++ return
++ CENTROIDFLAG=1
++ ORIGINFLAG=0
++ CMTTYPE=CENTROID
++ plots+=("cmt")
++ cpts+=("seisdepth")
++ echo ISC
++ echo Focal mechanisms from ISC catalog, http://www.isc.ac.uk/iscbulletin/search/fmechanisms/
++ echo GCMT
++ echo Focal mechanisms from GCMT, Ekström et al. 2012, doi:10.1016/j.pepi.2012.04.002
++ echo Focal mechanisms from GFZ GEOFON catalog, https://geofon.gfz-potsdam.de/eqinfo/list.php
++ echo GFZ
++ shift
++ [[ 15 -gt 0 ]]
++ key=-cmag
++ case ${key} in
++ [[ '' -eq 1 ]]
++ arg_is_flag 6.5
++ arg_is_float 6.5
++ [[ 6.5 =~ ^[+-]?([0-9]+\.?|[0-9]*\.[0-9]+)$ ]]
++ [[ 1 -eq 0 ]]
++ CMT_MINMAG=6.5
++ shift
++ arg_is_flag 10
++ arg_is_float 10
++ [[ 10 =~ ^[+-]?([0-9]+\.?|[0-9]*\.[0-9]+)$ ]]
++ [[ 1 -eq 0 ]]
++ CMT_MAXMAG=10
++ shift
++ cmagflag=1
++ shift
++ [[ 12 -gt 0 ]]
++ key=-legend
++ case ${key} in
++ [[ '' -eq 1 ]]
++ makelegendflag=1
++ [[ onmap =~ onmap ]]
++ shift
++ legendovermapflag=1
++ arg_is_flag -inset
++ arg_is_float -inset
++ [[ -inset =~ ^[+-]?([0-9]+\.?|[0-9]*\.[0-9]+)$ ]]
++ [[ - == [-] ]]
++ return
++ info_msg '[-legend]: No width for color bars specified. Using 2i'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 3337
+TECTOPLOT 03337: + printf '%s\n' '[-legend]: No width for color bars specified. Using 2i'
+[-legend]: No width for color bars specified. Using 2i
++ shift
++ [[ 10 -gt 0 ]]
++ key=-inset
++ case ${key} in
++ [[ '' -eq 1 ]]
++ arg_is_flag 1i
++ arg_is_float 1i
++ [[ 1i =~ ^[+-]?([0-9]+\.?|[0-9]*\.[0-9]+)$ ]]
++ [[ 1 == [-] ]]
++ [[ -z 1i ]]
++ INSET_SIZE=1i
++ shift
++ arg_is_flag 20
++ arg_is_float 20
++ [[ 20 =~ ^[+-]?([0-9]+\.?|[0-9]*\.[0-9]+)$ ]]
++ [[ 1 -eq 0 ]]
++ INSET_DEGWIDTH=20
++ shift
++ arg_is_flag 3.5i
++ arg_is_float 3.5i
++ [[ 3.5i =~ ^[+-]?([0-9]+\.?|[0-9]*\.[0-9]+)$ ]]
++ [[ 3 == [-] ]]
++ [[ -z 3.5i ]]
++ INSET_XOFF=3.5i
++ shift
++ arg_is_flag 2.7i
++ arg_is_float 2.7i
++ [[ 2.7i =~ ^[+-]?([0-9]+\.?|[0-9]*\.[0-9]+)$ ]]
++ [[ 2 == [-] ]]
++ [[ -z 2.7i ]]
++ INSET_YOFF=2.7i
++ shift
++ addinsetplotflag=1
++ shift
++ [[ 5 -gt 0 ]]
++ key=-author
++ case ${key} in
++ [[ '' -eq 1 ]]
++ authortimestampflag=1
++ authorflag=1
++ arg_is_flag -command
++ arg_is_float -command
++ [[ -command =~ ^[+-]?([0-9]+\.?|[0-9]*\.[0-9]+)$ ]]
++ [[ - == [-] ]]
++ return
++ info_msg '[-author]: No author indicated.'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 1403
+TECTOPLOT 01403: + printf '%s\n' '[-author]: No author indicated.'
+[-author]: No author indicated.
++ [[ -e /Users/kylebradley/Dropbox/scripts/tectoplot/tectoplot_defs/tectoplot.author ]]
++ info_msg 'Using author info in /Users/kylebradley/Dropbox/scripts/tectoplot/tectoplot_defs/tectoplot.author'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 1405
+TECTOPLOT 01405: + printf '%s\n' 'Using author info in /Users/kylebradley/Dropbox/scripts/tectoplot/tectoplot_defs/tectoplot.author'
+Using author info in /Users/kylebradley/Dropbox/scripts/tectoplot/tectoplot_defs/tectoplot.author
+++ head -n 1 /Users/kylebradley/Dropbox/scripts/tectoplot/tectoplot_defs/tectoplot.author
++ AUTHOR_ID='Kyle Bradley'
+++ date -u -u
++ DATE_ID='Mon May  3 21:21:19 UTC 2021'
++ shift
++ [[ 4 -gt 0 ]]
++ key=-command
++ case ${key} in
++ [[ '' -eq 1 ]]
++ printcommandflag=1
++ shift
++ [[ 3 -gt 0 ]]
++ key=-o
++ case ${key} in
++ [[ '' -eq 1 ]]
++ outflag=1
++ MAPOUT=example18
++ shift
++ info_msg '[-o]: Output file is example18'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 3761
+TECTOPLOT 03761: + printf '%s\n' '[-o]: Output file is example18'
+[-o]: Output file is example18
++ shift
++ [[ 1 -gt 0 ]]
++ key=-megadebug
++ case ${key} in
++ [[ '' -eq 1 ]]
++ set -x
++ shift
++ [[ 0 -gt 0 ]]
++ [[ '' -eq 1 ]]
++ [[ '' -eq 1 ]]
++ echo tectoplot -n -RJ OA -88 12 122 1200k 400k -t GEBCO20 -gres 120 -c -cmag 6.5 10 -legend onmap -inset 1i 20 3.5i 2.7i -author -command -o example18 -megadebug
++ [[ '' -eq 1 ]]
+++ echo '-4.5 - -12'
+++ bc -l
++ LATSIZE=7.5
+++ echo '162 - 154'
+++ bc -l
++ LONSIZE=8
+++ echo '(154 + 162) / 2'
+++ bc -l
++ CENTERLON=158.00000000000000000000
+++ echo '(-12 + -4.5) / 2'
+++ bc -l
++ CENTERLAT=-8.25000000000000000000
++ [[ ! 1 -eq 1 ]]
++ INCH=7
++ [[ '' -eq 1 ]]
++ info_msg 'Recalculating AOI from map boundary'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 7721
+TECTOPLOT 07721: + printf '%s\n' 'Recalculating AOI from map boundary'
+Recalculating AOI from map boundary
++ gmt psbasemap -Rk-600k/600k/-200k/200k -JOa-88/12/122/7i -A -Ve
++ gawk '
+  ($1!="NaN") {
+    while ($1>180) { $1=$1-360 }
+    while ($1<-180) { $1=$1+360 }
+    if ($1==($1+0) && $2==($2+0)) {
+      print
+    }
+  }'
++ gmt mapproject bounds.txt -Rk-600k/600k/-200k/200k -JOa-88/12/122/7i -Ve
++ [[ '' -eq 1 ]]
++ [[ 1 -eq 1 ]]
++ NEWRANGE=($(xy_range bounds.txt))
+++ xy_range bounds.txt
+++ local IFSval=
+++ [[ '' == '' ]]
+++ IFSval=' '
+++ gawk '
+    BEGIN {
+      minlon="NaN"
+      while (minlon=="NaN") {
+        getline
+        if ($1 == ($1+0) && $2 == ($2+0)) {
+          minlon=($1+0)
+          maxlon=($1+0)
+          minlat=($2+0)
+          maxlat=($2+0)
+        }
+      }
+    }
+    {
+      if ($1 == ($1+0) && $2 == ($2+0)) {
+        minlon=($1<minlon)?($1+0):minlon
+        maxlon=($1>maxlon)?($1+0):maxlon
+        minlat=($2<minlat)?($2+0):minlat
+        maxlat=($2>maxlat)?($2+0):maxlat
+      }
+    }
+    END {
+      print minlon, maxlon, minlat, maxlat
+    }'
++ info_msg 'Suggested updated range is: -93.6806/-82.3751/7.59312/16.3581'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 7795
+TECTOPLOT 07795: + printf '%s\n' 'Suggested updated range is: -93.6806/-82.3751/7.59312/16.3581'
+Suggested updated range is: -93.6806/-82.3751/7.59312/16.3581
++ usenewrange=1
++ [[ -93.6806 =~ NaN ]]
++ [[ -82.3751 =~ NaN ]]
++ [[ 7.59312 =~ NaN ]]
++ [[ 16.3581 =~ NaN ]]
++ [[ 1 -eq 1 ]]
++ info_msg 'Updating AOI to new map extent: -93.6806/-82.3751/7.59312/16.3581'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 7811
+TECTOPLOT 07811: + printf '%s\n' 'Updating AOI to new map extent: -93.6806/-82.3751/7.59312/16.3581'
+Updating AOI to new map extent: -93.6806/-82.3751/7.59312/16.3581
++ MINLON=-93.6806
++ MAXLON=-82.3751
++ MINLAT=7.59312
++ MAXLAT=16.3581
++ NEWRANGECM=($(gmt mapproject ${RJSTRING[@]} -WjCM ${VERBOSE}))
+++ gmt mapproject -Rk-600k/600k/-200k/200k -JOa-88/12/122/7i -WjCM -Ve
++ CENTERLON=-88
++ CENTERLAT=12
++ [[ 1 == 0 ]]
++ info_msg 'Output file is example18, legend is legend.pdf'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 7833
+TECTOPLOT 07833: + printf '%s\n' 'Output file is example18, legend is legend.pdf'
+Output file is example18, legend is legend.pdf
++ MAPOUTLEGEND=legend.pdf
++ info_msg 'RJSTRING: -Rk-600k/600k/-200k/200k -JOa-88/12/122/7i'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 7837
+TECTOPLOT 07837: + printf '%s\n' 'RJSTRING: -Rk-600k/600k/-200k/200k -JOa-88/12/122/7i'
+RJSTRING: -Rk-600k/600k/-200k/200k -JOa-88/12/122/7i
++ [[ '' -eq 1 ]]
++ [[ '' -eq 1 ]]
++ OVERLAY=
++ [[ 0 -eq 1 ]]
++ [[ t == \/ ]]
++ [[ -d tempfiles_to_delete/ ]]
++ info_msg 'Temp dir tempfiles_to_delete/ exists. Deleting.'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 7889
+TECTOPLOT 07889: + printf '%s\n' 'Temp dir tempfiles_to_delete/ exists. Deleting.'
+Temp dir tempfiles_to_delete/ exists. Deleting.
++ rm -rf tempfiles_to_delete/
++ info_msg 'Creating temporary directory tempfiles_to_delete/.'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 7892
+TECTOPLOT 07892: + printf '%s\n' 'Creating temporary directory tempfiles_to_delete/.'
+Creating temporary directory tempfiles_to_delete/.
++ mkdir -p tempfiles_to_delete/
++ [[ -s tectoplot_path.clip ]]
++ [[ -e info_messages.txt ]]
++ [[ -e datasources.txt ]]
++ mv datasources.txt tempfiles_to_delete/
++ [[ -e short_datasources.txt ]]
++ mv short_datasources.txt tempfiles_to_delete/
++ [[ 0 -eq 1 ]]
++ cd tempfiles_to_delete/
++ mkdir -p mapelements/
++ echo '-Rk-600k/600k/-200k/200k -JOa-88/12/122/7i'
++ mkdir -p seismicity/
++ mkdir -p cpts/
++ [[ -d ../tmpcpts ]]
++ mkdir -p topo/
++ mkdir -p volcanoes/
++ mkdir -p grav/
++ mkdir -p slab/
++ mkdir -p profiles/
++ mkdir -p gps/
++ mkdir -p kinematics/
++ mkdir -p focal_mechanisms/
++ mkdir -p plates/
++ mkdir -p rasters/
++ [[ -e ../aprof_profs.txt ]]
++ [[ -e ../cprof_prep.txt ]]
++ [[ -e ../bounds.txt ]]
++ mv ../bounds.txt mapelements/
++ [[ -e ../projbounds.txt ]]
++ mv ../projbounds.txt mapelements/
++ [[ -e ../vres_profile.xy ]]
++ [[ '' -eq 1 ]]
++ XYRANGE=($(xy_range ${F_MAPELEMENTS}projbounds.txt))
+++ xy_range mapelements/projbounds.txt
+++ local IFSval=
+++ [[ '' == '' ]]
+++ IFSval=' '
+++ gawk '
+    BEGIN {
+      minlon="NaN"
+      while (minlon=="NaN") {
+        getline
+        if ($1 == ($1+0) && $2 == ($2+0)) {
+          minlon=($1+0)
+          maxlon=($1+0)
+          minlat=($2+0)
+          maxlat=($2+0)
+        }
+      }
+    }
+    {
+      if ($1 == ($1+0) && $2 == ($2+0)) {
+        minlon=($1<minlon)?($1+0):minlon
+        maxlon=($1>maxlon)?($1+0):maxlon
+        minlat=($2<minlat)?($2+0):minlat
+        maxlat=($2>maxlat)?($2+0):maxlat
+      }
+    }
+    END {
+      print minlon, maxlon, minlat, maxlat
+    }'
++ echo -6.82707e-05 17.7801 -4.36104e-05 5.92671
++ gawk -v minlon=-6.82707e-05 -v maxlon=17.7801 -v minlat=-4.36104e-05 -v maxlat=5.92671 '
+BEGIN {
+    row[1]="AFKPU"
+    row[2]="BGLQV"
+    row[3]="CHMRW"
+    row[4]="DINSX"
+    row[5]="EJOTY"
+    difflat=maxlat-minlat
+    difflon=maxlon-minlon
+
+    newdifflon=difflon*8/10
+    newminlon=minlon+difflon*1/10
+    newmaxlon=maxlon-difflon*1/10
+
+    newdifflat=difflat*8/10
+    newminlat=minlat+difflat*1/10
+    newmaxlat=maxlat-difflat*1/10
+
+    minlon=newminlon
+    maxlon=newmaxlon
+    minlat=newminlat
+    maxlat=newmaxlat
+    difflat=newdifflat
+    difflon=newdifflon
+
+    for(i=1;i<=5;i++) {
+      for(j=1; j<=5; j++) {
+        char=toupper(substr(row[i],j,1))
+        lats[char]=minlat+(i-1)/4*difflat
+        lons[char]=minlon+(j-1)/4*difflon
+        print lons[char], lats[char], char
+      }
+    }
+}'
++ gmt mapproject mapelements/aprof_database_proj.txt -Rk-600k/600k/-200k/200k -JOa-88/12/122/7i -I -Ve
++ tr '\t' ' '
++ [[ -s profiles/cprof_prep.txt ]]
++ [[ '' -eq 1 ]]
++ [[ '' -eq 1 ]]
++ [[ 0 -eq 1 ]]
+++ echo '-6 > 7.59312 && -6 < 16.3581 && 160 < -82.3751 && 160 > -93.6806'
+++ bc -l
++ [[ 0 -eq 0 ]]
++ info_msg 'Reference point 160 -6 falls outside the frame. Moving to center of frame.'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 8189
+TECTOPLOT 08189: + printf '%s\n' 'Reference point 160 -6 falls outside the frame. Moving to center of frame.'
+Reference point 160 -6 falls outside the frame. Moving to center of frame.
+++ echo '(7.59312 + 16.3581) / 2'
+++ bc -l
++ REFPTLAT=11.97561000000000000000
+++ echo '(-93.6806 + -82.3751) / 2'
+++ bc -l
++ REFPTLON=-88.02785000000000000000
++ info_msg 'Reference point moved to -88.02785000000000000000 11.97561000000000000000'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 8192
+TECTOPLOT 08192: + printf '%s\n' 'Reference point moved to -88.02785000000000000000 11.97561000000000000000'
+Reference point moved to -88.02785000000000000000 11.97561000000000000000
+++ echo '(-82.3751 - -93.6806)/6'
+++ bc -l
++ GRIDSP=1.88425000000000000000
++ info_msg 'Initial grid spacing = 1.88425000000000000000'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 8198
+TECTOPLOT 08198: + printf '%s\n' 'Initial grid spacing = 1.88425000000000000000'
+Initial grid spacing = 1.88425000000000000000
+++ echo '1.88425000000000000000 > 30'
+++ bc
++ [[ 0 -eq 1 ]]
+++ echo '1.88425000000000000000 > 10'
+++ bc
++ [[ 0 -eq 1 ]]
+++ echo '1.88425000000000000000 > 5'
+++ bc
++ [[ 0 -eq 1 ]]
+++ echo '1.88425000000000000000 > 2'
+++ bc
++ [[ 0 -eq 1 ]]
+++ echo '1.88425000000000000000 > 1'
+++ bc
++ [[ 1 -eq 1 ]]
++ GRIDSP=1
++ info_msg 'updated grid spacing = 1'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 8226
+TECTOPLOT 08226: + printf '%s\n' 'updated grid spacing = 1'
+updated grid spacing = 1
++ [[ 0 -eq 1 ]]
++ [[ 0 -eq 1 ]]
++ GRIDSP_LINE=
++ [[ '' == '' ]]
++ TITLE=
++ [[ 0 -eq 0 ]]
++ bcmds+=("-Bxa${GRIDSP}${GRIDSP_LINE}")
++ bcmds+=("-Bya${GRIDSP}${GRIDSP_LINE}")
++ bcmds+=("-B${GRIDCALL}${TITLE}")
++ BSTRING=("${bcmds[@]}")
++ for plot in '${plots[@]}'
++ [[ topo == \g\r\a\t\i\c\u\l\e ]]
++ for plot in '${plots[@]}'
++ [[ cmt == \g\r\a\t\i\c\u\l\e ]]
++ [[ '' -eq 0 ]]
++ [[ '' -eq 0 ]]
++ plots+=("graticule")
++ [[ 1 -eq 1 ]]
++ plots+=("inset")
+++ echo '>>>>>>>>> Plotting order is topo' cmt graticule 'inset <<<<<<<<<<<<<'
++ MSG='>>>>>>>>> Plotting order is topo cmt graticule inset <<<<<<<<<<<<<'
++ [[ 1 -eq 1 ]]
++ echo '>>>>>>>>>' Plotting order is topo cmt graticule inset '<<<<<<<<<<<<<'
+>>>>>>>>> Plotting order is topo cmt graticule inset <<<<<<<<<<<<<
++ legendwords='topo cmt graticule inset'
+++ echo '>>>>>>>>> Legend order is topo cmt graticule inset <<<<<<<<<<<<<'
++ MSG='>>>>>>>>> Legend order is topo cmt graticule inset <<<<<<<<<<<<<'
++ [[ 1 -eq 1 ]]
++ echo '>>>>>>>>>' Legend order is topo cmt graticule inset '<<<<<<<<<<<<<'
+>>>>>>>>> Legend order is topo cmt graticule inset <<<<<<<<<<<<<
++ [[ '' -eq 1 ]]
++ [[ '' -eq 1 ]]
+++ echo '-93.6806 0.0'
+++ gawk '{print $1-$2}'
++ DEM_MINLON=-93.6806
+++ echo '-82.3751 0.0'
+++ gawk '{print $1+$2}'
++ DEM_MAXLON=-82.3751
+++ echo '7.59312 0.0'
+++ gawk '{print ($1-$2)>=-90?$1:$1-$2}'
++ DEM_MINLAT=7.59312
+++ echo '16.3581 0.0'
+++ gawk '{print ($1+$2)<=90?$1:$1+$2}'
++ DEM_MAXLAT=16.3581
++ [[ 1 -eq 1 ]]
++ info_msg 'Making basemap GEBCO20'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 8391
+TECTOPLOT 08391: + printf '%s\n' 'Making basemap GEBCO20'
+Making basemap GEBCO20
++ [[ '' -eq 1 ]]
++ [[ GEBCO20 =~ GMRT ]]
++ [[ '' -eq 1 ]]
++ [[ ! GEBCO20 =~ GMRT ]]
++ [[ '' -eq 0 ]]
++ [[ 0 -eq 1 ]]
++ info_msg 'Using grid /Users/kylebradley/Dropbox/TectoplotData/GEBCO20/GEBCO_2020.nc'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 8493
+TECTOPLOT 08493: + printf '%s\n' 'Using grid /Users/kylebradley/Dropbox/TectoplotData/GEBCO20/GEBCO_2020.nc'
+Using grid /Users/kylebradley/Dropbox/TectoplotData/GEBCO20/GEBCO_2020.nc
++ name=/Users/kylebradley/Dropbox/TectoplotData/GEBCO20/GEBCO20_-93.6806_-82.3751_7.59312_16.3581.nc
++ [[ -e /Users/kylebradley/Dropbox/TectoplotData/GEBCO20/GEBCO20_-93.6806_-82.3751_7.59312_16.3581.nc ]]
++ info_msg 'DEM file /Users/kylebradley/Dropbox/TectoplotData/GEBCO20/GEBCO20_-93.6806_-82.3751_7.59312_16.3581.nc already exists'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 8499
+TECTOPLOT 08499: + printf '%s\n' 'DEM file /Users/kylebradley/Dropbox/TectoplotData/GEBCO20/GEBCO20_-93.6806_-82.3751_7.59312_16.3581.nc already exists'
+DEM file /Users/kylebradley/Dropbox/TectoplotData/GEBCO20/GEBCO20_-93.6806_-82.3751_7.59312_16.3581.nc already exists
++ demiscutflag=1
++ BATHY=/Users/kylebradley/Dropbox/TectoplotData/GEBCO20/GEBCO20_-93.6806_-82.3751_7.59312_16.3581.nc
++ [[ '' -eq 1 ]]
++ [[ '' -eq 1 ]]
++ [[ 1 -eq 1 ]]
++ [[ -e /Users/kylebradley/Dropbox/TectoplotData/GEBCO20/GEBCO20_-93.6806_-82.3751_7.59312_16.3581.nc ]]
++ info_msg '[-clipdem]: saving DEM as topo/dem.nc'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 8536
+TECTOPLOT 08536: + printf '%s\n' '[-clipdem]: saving DEM as topo/dem.nc'
+[-clipdem]: saving DEM as topo/dem.nc
++ [[ 1 -eq 1 ]]
++ [[ '' -eq 1 ]]
++ cp /Users/kylebradley/Dropbox/TectoplotData/GEBCO20/GEBCO20_-93.6806_-82.3751_7.59312_16.3581.nc topo/dem.nc
++ [[ '' -eq 1 ]]
++ [[ '' -eq 1 ]]
++ [[ '' -eq 1 ]]
++ [[ '' -eq 1 ]]
++ [[ '' -eq 1 ]]
+++ echo '0.1 * 3.5'
+++ bc -l
++ SYMSIZE1=.35
+++ echo '0.1 * 1'
+++ bc -l
++ SYMSIZE2=.1
+++ echo '0.1 * 3.5'
+++ bc -l
++ SYMSIZE3=.35
++ [[ 1 -eq 1 ]]
++ [[ MomentTensor =~ GlobalCMT ]]
++ [[ MomentTensor =~ MomentTensor ]]
++ CMTLETTER=m
++ [[ MomentTensor =~ TNP ]]
++ [[ 1 -eq 1 ]]
++ [[ '' -eq 0 ]]
++ echo CMT/CENTROID
++ [[ DefaultNOCMT == \D\e\f\a\u\l\t\N\O\C\M\T ]]
++ CMTFILE=/Users/kylebradley/Dropbox/TectoplotData/CombinedFocals/focals.cat
++ gawk -v orig=0 -v cent=1 -v mindepth=-1000 -v maxdepth=6000 -v minlat=7.59312 -v maxlat=16.3581 -v minlon=-93.6806 -v maxlon=-82.3751 -v minmag=6.5 -v maxmag=10 '
+    @include "tectoplot_functions.awk"
+    {
+      mag=$13
+      if (cent==1) {
+        lon=$5
+        lat=$6
+        depth=$7
+      } else {
+        lon=$8
+        lat=$9
+        depth=$10
+      }
+      if ((depth >= mindepth && depth <= maxdepth) && (lat >= minlat && lat <= maxlat) && (mag >= minmag && mag <= maxmag)) {
+        if (test_lon(minlon, maxlon, lon) == 1) {
+          print
+        }
+      }
+    }'
+++ abs_path focal_mechanisms/cmt_global_aoi.dat
+++ '[' -d focal_mechanisms/cmt_global_aoi.dat ']'
+++ '[' -f focal_mechanisms/cmt_global_aoi.dat ']'
+++ [[ focal_mechanisms/cmt_global_aoi.dat = /* ]]
+++ [[ focal_mechanisms/cmt_global_aoi.dat == */* ]]
++++ cd focal_mechanisms
++++ pwd
+++ echo /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_global_aoi.dat
++ CMTFILE=/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_global_aoi.dat
++ touch focal_mechanisms/cmt_local_aoi.dat
++ [[ '' -eq 1 ]]
++ gawk -v dothrust=1 -v donormal=1 -v doss=1 '{
+    if (substr($1,2,1) == "T" && dothrust == 1) {
+      print
+    } else if (substr($1,2,1) == "N" && donormal == 1) {
+      print
+    } else if (substr($1,2,1) == "S" && doss == 1) {
+      print
+    }
+  }'
+++ abs_path focal_mechanisms/cmt_typefilter.dat
+++ '[' -d focal_mechanisms/cmt_typefilter.dat ']'
+++ '[' -f focal_mechanisms/cmt_typefilter.dat ']'
+++ [[ focal_mechanisms/cmt_typefilter.dat = /* ]]
+++ [[ focal_mechanisms/cmt_typefilter.dat == */* ]]
++++ cd focal_mechanisms
++++ pwd
+++ echo /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_typefilter.dat
++ CMTFILE=/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_typefilter.dat
++ [[ '' -eq 1 ]]
++ [[ '' -eq 1 ]]
++ [[ '' -eq 1 ]]
++ [[ '' -eq 1 ]]
++ [[ '' -eq 1 ]]
++ [[ '' -eq 1 ]]
++ [[ '' -eq 1 ]]
++ [[ '' -eq 1 ]]
++ [[ 1 -eq 1 ]]
++ [[ -e /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_typefilter.dat ]]
++ [[ -e seismicity/eqs.txt ]]
++ [[ '' -eq 1 ]]
+++ echo '0.07 * 1 '
+++ bc -l
++ CMTRESCALE=.07
++ [[ 1 -eq 1 ]]
++ info_msg 'Scaling CMT earthquake magnitudes for display only'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 9538
+TECTOPLOT 09538: + printf '%s\n' 'Scaling CMT earthquake magnitudes for display only'
+Scaling CMT earthquake magnitudes for display only
++ gawk -v str=3 -v sref=6 '{
+      mw=$13
+      mwmod = (mw^str)/(sref^(str-1))
+      a=sprintf("%E", 10^((mwmod + 10.7)*3/2))
+      split(a,b,"+")  # mantissa
+      split(a,c,"E")  # exponent
+      print $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, c[1], b[2], $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31, $32, $33, $34, $35, $36, $37, $38, $39
+    }'
+++ abs_path focal_mechanisms/cmt_scale.dat
+++ '[' -d focal_mechanisms/cmt_scale.dat ']'
+++ '[' -f focal_mechanisms/cmt_scale.dat ']'
+++ [[ focal_mechanisms/cmt_scale.dat = /* ]]
+++ [[ focal_mechanisms/cmt_scale.dat == */* ]]
++++ cd focal_mechanisms
++++ pwd
+++ echo /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_scale.dat
++ CMTFILE=/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_scale.dat
++ touch focal_mechanisms/cmt_thrust.txt focal_mechanisms/cmt_normal.txt focal_mechanisms/cmt_strikeslip.txt
++ touch kinematics/t_axes_thrust.txt kinematics/n_axes_thrust.txt kinematics/p_axes_thrust.txt kinematics/t_axes_normal.txt kinematics/n_axes_normal.txt kinematics/p_axes_normal.txt kinematics/t_axes_strikeslip.txt kinematics/n_axes_strikeslip.txt kinematics/p_axes_strikeslip.txt
++ cd kinematics/
++ gawk -v fmt=MomentTensor -v cmttype=CENTROID -v minmag=6.5 -v maxmag=10 '
+    @include "tectoplot_functions.awk"
+    # function abs(v) { return (v>0)?v:-v}
+    BEGIN { pi=atan2(0,-1) }
+    {
+      event_code=$2
+      iso8601_code=$3
+      Mw=$13
+      mantissa=$14;exponent=$15
+      strike1=$16;dip1=$17;rake1=$18;strike2=$19;dip2=$20;rake2=$21
+      Mrr=$33; Mtt=$34; Mpp=$35; Mrt=$36; Mrp=$37; Mtp=$38
+      Tval=$23; Taz=$24; Tinc=$25; Nval=$26; Naz=$27; Ninc=$28; Pval=$29; Paz=$30; Pinc=$31;
+      epoch=iso8601_to_epoch(iso8601_code)
+
+      timecode=$3
+      if (cmttype=="CENTROID") {
+        lon=$5; lat=$6; depth=$7;
+        altlon=$8; altlat=$9; altdepth=$10;
+      } else {
+        lon=$8; lat=$9; depth=$10;
+        altlon=$5; altlat=$6; altdepth=$7;
+      }
+
+      if (lon != "none" && lat != "none") {
+
+        if (fmt == "GlobalCMT") {
+          #  lon lat depth strike1 dip1 rake1 aux_strike dip2 rake2 moment altlon altlat [event_title] altdepth [timecode]
+          if (substr($1,2,1) == "T") {
+            print lon, lat, depth, strike1, dip1, rake1, strike2, dip2, rake2, mantissa, exponent, altlon, altlat, event_code, altdepth, epoch > "cmt_thrust.txt"
+          } else if (substr($1,2,1) == "N") {
+            print lon, lat, depth, strike1, dip1, rake1, strike2, dip2, rake2, mantissa, exponent, altlon, altlat, event_code, altdepth, epoch > "cmt_normal.txt"
+          } else {
+            print lon, lat, depth, strike1, dip1, rake1, strike2, dip2, rake2, mantissa, exponent, altlon, altlat, event_code, altdepth, epoch > "cmt_strikeslip.txt"
+          }
+          print lon, lat, depth, strike1, dip1, rake1, strike2, dip2, rake2, mantissa, exponent, altlon, altlat, event_code, altdepth, epoch > "cmt.dat"
+
+        } else if (fmt == "MomentTensor") {
+          # lon lat depth mrr mtt mff mrt mrf mtf exp altlon altlat [event_title] altdepth [timecode]
+            if (substr($1,2,1) == "T") {
+              print lon, lat, depth, Mrr, Mtt, Mpp, Mrt, Mrp, Mtp, exponent, altlon, altlat, event_code, altdepth, epoch > "cmt_thrust.txt"
+            } else if (substr($1,2,1) == "N") {
+              print lon, lat, depth, Mrr, Mtt, Mpp, Mrt, Mrp, Mtp, exponent, altlon, altlat, event_code, altdepth, epoch  > "cmt_normal.txt"
+            } else {
+              print lon, lat, depth, Mrr, Mtt, Mpp, Mrt, Mrp, Mtp, exponent, altlon, altlat, event_code, altdepth, epoch  > "cmt_strikeslip.txt"
+            }
+            print lon, lat, depth, Mrr, Mtt, Mpp, Mrt, Mrp, Mtp, exponent, altlon, altlat, event_code, altdepth, epoch  > "cmt.dat"
+        } else if (fmt == "TNP") {
+           # y  Best double couple defined from principal axis:
+  	       # X Y depth T_value T_azim T_plunge N_value N_azim N_plunge P_value P_azim P_plunge exp [newX newY] [event_title]
+          if (substr($1,2,1) == "T") {
+            print lon, lat, depth, Tval, Taz, Tinc, Nval, Naz, Ninc, Pval, Paz, Pinc, exponent, altlon, altlat, event_code, altdepth, epoch > "cmt_thrust.txt"
+          } else if (substr($1,2,1) == "N") {
+            print lon, lat, depth, Tval, Taz, Tinc, Nval, Naz, Ninc, Pval, Paz, Pinc, exponent, altlon, altlat, event_code, altdepth, epoch  > "cmt_normal.txt"
+          } else {
+            print lon, lat, depth, Tval, Taz, Tinc, Nval, Naz, Ninc, Pval, Paz, Pinc, exponent, altlon, altlat, event_code, altdepth, epoch  > "cmt_strikeslip.txt"
+          }
+          print lon, lat, depth, Tval, Taz, Tinc, Nval, Naz, Ninc, Pval, Paz, Pinc, exponent, altlon, altlat, event_code, altdepth, epoch   > "cmt.dat"
+        }
+
+        if (substr($1,2,1) == "T") {
+          print lon, lat, Taz, Tinc > "t_axes_thrust.txt"
+          print lon, lat, Naz, Ninc > "n_axes_thrust.txt"
+          print lon, lat, Paz, Pinc > "p_axes_thrust.txt"
+        } else if (substr($1,2,1) == "N") {
+          print lon, lat, Taz, Tinc> "t_axes_normal.txt"
+          print lon, lat, Naz, Ninc > "n_axes_normal.txt"
+          print lon, lat, Paz, Pinc > "p_axes_normal.txt"
+        } else if (substr($1,2,1) == "S") {
+          print lon, lat, Taz, Tinc > "t_axes_strikeslip.txt"
+          print lon, lat, Naz, Ninc > "n_axes_strikeslip.txt"
+          print lon, lat, Paz, Pinc > "p_axes_strikeslip.txt"
+        }
+
+        if (Mw >= minmag && Mw <= maxmag) {
+          if (substr($1,2,1) == "T") {
+            print lon, lat, depth, strike1, dip1, rake1, strike2, dip2, rake2, mantissa, exponent, altlon, altlat, event_code, altdepth, epoch > "kin_thrust.txt"
+          } else if (substr($1,2,1) == "N") {
+            print lon, lat, depth, strike1, dip1, rake1, strike2, dip2, rake2, mantissa, exponent, altlon, altlat, event_code, altdepth, epoch > "kin_normal.txt"
+          } else {
+            print lon, lat, depth, strike1, dip1, rake1, strike2, dip2, rake2, mantissa, exponent, altlon, altlat, event_code, altdepth, epoch > "kin_strikeslip.txt"
+          }
+        }
+      }
+    }'
++ [[ -e cmt_thrust.txt ]]
++ mv cmt_thrust.txt ../focal_mechanisms/
++ [[ -e cmt_normal.txt ]]
++ mv cmt_normal.txt ../focal_mechanisms/
++ [[ -e cmt_strikeslip.txt ]]
++ mv cmt_strikeslip.txt ../focal_mechanisms/
++ [[ -e cmt.dat ]]
++ mv cmt.dat ../focal_mechanisms/
++ cp ../focal_mechanisms/cmt_thrust.txt ../focal_mechanisms/cmt_thrust_orig.txt
++ [[ -s ../focal_mechanisms/cmt_thrust_nearslab.txt ]]
++ cp ../focal_mechanisms/cmt_thrust.txt kin_thrust.txt
++ touch kin_thrust.txt kin_normal.txt kin_strikeslip.txt
++ gawk -v symsize=.35 '{if($8 > 45) print $1, $2, ($7+270) % 360, symsize; else print $1, $2, ($4+270) % 360, symsize;  }'
++ gawk -v symsize=.1 '{if($8 > 45) print $1, $2, ($4+90) % 360, symsize; else print $1, $2, ($7+90) % 360, symsize;  }'
++ gawk -v symsize=.35 '{if($8 > 45) print $1, $2, ($4) % 360, symsize ; else print $1, $2, ($7) % 360, symsize ;  }'
++ gawk 'NR > 1' kin_thrust.txt
++ gawk -v symsize=.35 '{if($8 > 45) print $1, $2, ($4+270) % 360, symsize; else print $1, $2, ($7+270) % 360, symsize;  }'
++ gawk 'NR > 1' kin_thrust.txt
++ gawk -v symsize=.1 '{if($8 > 45) print $1, $2, ($7+90) % 360, symsize; else print $1, $2, ($4+90) % 360, symsize ;  }'
++ gawk 'NR > 1' kin_thrust.txt
++ gawk -v symsize=.35 '{if($8 > 45) print $1, $2, ($7) % 360, symsize ; else print $1, $2, ($4) % 360, symsize ;  }'
++ gawk 'NR > 1' kin_strikeslip.txt
++ gawk -v symsize=.35 '{ print $1, $2, ($7+270) % 360, symsize }'
++ gawk 'NR > 1' kin_strikeslip.txt
++ gawk -v symsize=.35 '{ print $1, $2, ($4+270) % 360, symsize }'
++ gawk 'NR > 1' kin_normal.txt
++ gawk -v symsize=.35 '{ print $1, $2, ($7+270) % 360, symsize }'
++ gawk 'NR > 1' kin_normal.txt
++ gawk -v symsize=.35 '{ print $1, $2, ($4+270) % 360, symsize }'
++ cd ..
++ [[ 0 -eq 1 ]]
++ [[ 1 -eq 1 ]]
++ [[ -e seismicity/eqs.txt ]]
++ [[ 0 -eq 1 ]]
++ [[ '' -eq 1 ]]
++ [[ '' -eq 1 ]]
++ [[ '' -eq 1 ]]
++ [[ '' -eq 1 ]]
++ [[ ! -e /Users/kylebradley/Dropbox/scripts/tectoplot/CPT/grayhs.cpt ]]
++ [[ 0 -eq 1 ]]
++ [[ ! -e /Users/kylebradley/Dropbox/scripts/tectoplot/CPT/whitehs.cpt ]]
++ [[ 0 -eq 1 ]]
++ [[ ! -e /Users/kylebradley/Dropbox/scripts/tectoplot/CPT/cycleaz.cpt ]]
++ [[ 0 -eq 1 ]]
++ [[ ! -e /Users/kylebradley/Dropbox/scripts/tectoplot/CPT/defaultpt.cpt ]]
++ [[ 0 -eq 1 ]]
++ [[ ! -e /Users/kylebradley/Dropbox/scripts/tectoplot/CPT/platevel_one.cpt ]]
++ [[ 0 -eq 1 ]]
++ for cptfile in '${cpts[@]}'
++ case $cptfile in
++ [[ '' -eq 0 ]]
++ topoctrlstring=ms
++ [[ '' -eq 0 ]]
++ info_msg 'Adding color stretch to topoctrlstring'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 10401
+TECTOPLOT 10401: + printf '%s\n' 'Adding color stretch to topoctrlstring'
+Adding color stretch to topoctrlstring
++ topoctrlstring=msc
++ info_msg 'Plotting topo from /Users/kylebradley/Dropbox/TectoplotData/GEBCO20/GEBCO20_-93.6806_-82.3751_7.59312_16.3581.nc: control string is msc'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 10405
+TECTOPLOT 10405: + printf '%s\n' 'Plotting topo from /Users/kylebradley/Dropbox/TectoplotData/GEBCO20/GEBCO20_-93.6806_-82.3751_7.59312_16.3581.nc: control string is msc'
+Plotting topo from /Users/kylebradley/Dropbox/TectoplotData/GEBCO20/GEBCO20_-93.6806_-82.3751_7.59312_16.3581.nc: control string is msc
++ touch cpts/topo.cpt
+++ abs_path cpts/topo.cpt
+++ '[' -d cpts/topo.cpt ']'
+++ '[' -f cpts/topo.cpt ']'
+++ [[ cpts/topo.cpt = /* ]]
+++ [[ cpts/topo.cpt == */* ]]
++++ cd cpts
++++ pwd
+++ echo /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/topo.cpt
++ TOPO_CPT=/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/topo.cpt
++ [[ 0 -eq 1 ]]
++ info_msg 'Building default TOPO CPT file from geo'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 10412
+TECTOPLOT 10412: + printf '%s\n' 'Building default TOPO CPT file from geo'
+Building default TOPO CPT file from geo
++ gmt makecpt -Fr -Cgeo -T-8000/8000/1 -Ve
++ [[ '' -eq 1 ]]
++ BATHYXINC=2
++ for cptfile in '${cpts[@]}'
++ case $cptfile in
++ info_msg 'Making seismicity vs depth CPT: maximum depth EQs at 80'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 10445
+TECTOPLOT 10445: + printf '%s\n' 'Making seismicity vs depth CPT: maximum depth EQs at 80'
+Making seismicity vs depth CPT: maximum depth EQs at 80
++ touch cpts/seisdepth.cpt
++ [[ '' -eq 1 ]]
+++ abs_path cpts/seisdepth.cpt
+++ '[' -d cpts/seisdepth.cpt ']'
+++ '[' -f cpts/seisdepth.cpt ']'
+++ [[ cpts/seisdepth.cpt = /* ]]
+++ [[ cpts/seisdepth.cpt == */* ]]
++++ cd cpts
++++ pwd
+++ echo /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt
++ SEISDEPTH_CPT=/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt
++ gmt makecpt -Cseis -Do -T0/80 -Z -Ve
++ cp /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt cpts/seisdepth_nodeepest.cpt
++ echo '80	0/17.937/216.21	6370	0/0/255'
++ [[ '' -eq 1 ]]
++ echo '#!/bin/bash'
++ echo ''
++ echo 'echo "%TECTOPLOT: tectoplot -n -RJ OA -88 12 122 1200k 400k -t GEBCO20 -gres 120 -c -cmag 6.5 10 -legend onmap -inset 1i 20 3.5i 2.7i -author -command -o example18 -megadebug" >> map.ps'
++ echo '%TECTOPLOT: tectoplot -n -RJ OA -88 12 122 1200k 400k -t GEBCO20 -gres 120 -c -cmag 6.5 10 -legend onmap -inset 1i 20 3.5i 2.7i -author -command -o example18 -megadebug'
++ echo 'gmt gmtset PS_PAGE_ORIENTATION portrait PS_MEDIA 100ix100i'
++ gmt gmtset PS_PAGE_ORIENTATION portrait PS_MEDIA 100ix100i
++ echo 'gmt gmtset MAP_FRAME_TYPE fancy MAP_FRAME_WIDTH 0.12c MAP_FRAME_PEN 0.5p,black'
++ echo 'gmt gmtset FORMAT_GEO_MAP=D'
++ gmt gmtset MAP_FRAME_TYPE fancy MAP_FRAME_WIDTH 0.12c MAP_FRAME_PEN 0.5p,black
++ gmt gmtset FORMAT_GEO_MAP=D
++ [[ '' -eq 1 ]]
++ [[ '' -eq 1 ]]
++ echo 'gmt gmtset FONT_ANNOT_PRIMARY 10 FONT_LABEL 10 FONT_TITLE 12p,Helvetica,black'
++ gmt gmtset FONT_ANNOT_PRIMARY 10 FONT_LABEL 10 FONT_TITLE 12p,Helvetica,black
++ echo 'gmt gmtset FONT_ANNOT_PRIMARY 10 FONT_LABEL 10 FONT_TITLE 12p,Helvetica,black'
++ gmt gmtset MAP_VECTOR_SHAPE 0.5 MAP_TITLE_OFFSET 24p
++ [[ 0 -eq 1 ]]
++ cleanup base_fake.ps base_fake.eps base_fake_nolabels.ps base_fake_nolabels.eps
++ local n=0
++ on_exit_items[$n]='base_fake.ps base_fake.eps base_fake_nolabels.ps base_fake_nolabels.eps'
++ [[ 0 -eq 0 ]]
++ info_msg 'Setting EXIT trap function cleanup_on_exit()'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 137
+TECTOPLOT 00137: + printf '%s\n' 'Setting EXIT trap function cleanup_on_exit()'
+Setting EXIT trap function cleanup_on_exit()
++ trap cleanup_on_exit EXIT
++ gmt psbasemap -Rk-600k/600k/-200k/200k -JOa-88/12/122/7i -Ve -Btlbr
++ gmt psbasemap -Rk-600k/600k/-200k/200k -JOa-88/12/122/7i -Bxa1 -Bya1 -BWESN -Ve
++ gmt psxy -T -X1i -Yc -Ve -K -Rk-600k/600k/-200k/200k -JOa-88/12/122/7i
++ gmt psxy -T -X0i -Yc -Ve -K -Rk-600k/600k/-200k/200k -JOa-88/12/122/7i
++ gmt psxy -T -X0i -Yc -Ve -K -Rk-600k/600k/-200k/200k -JOa-88/12/122/7i
++ gmt psxy -T -X0i -Yc -Ve -K -Rk-600k/600k/-200k/200k -JOa-88/12/122/7i
++ gmt psxy -T -X0i -Yc -Ve -K -Rk-600k/600k/-200k/200k -JOa-88/12/122/7i
++ gmt psxy -T -X0i -Yc -Ve -K -Rk-600k/600k/-200k/200k -JOa-88/12/122/7i
++ gmt psxy -T -X0i -Yc -Ve -K -Rk-600k/600k/-200k/200k -JOa-88/12/122/7i
++ gmt psxy -T -X0i -Yc -Ve -K -Rk-600k/600k/-200k/200k -JOa-88/12/122/7i
++ gmt psxy -T -X0i -Yc -Ve -K -Rk-600k/600k/-200k/200k -JOa-88/12/122/7i
++ cleanup kinsv.ps eqlabel.ps plate.ps mecaleg.ps seissymbol.ps volcanoes.ps velarrow.ps velgps.ps
++ local n=1
++ on_exit_items[$n]='kinsv.ps eqlabel.ps plate.ps mecaleg.ps seissymbol.ps volcanoes.ps velarrow.ps velgps.ps'
++ [[ 1 -eq 0 ]]
+++ gmt psconvert base_fake.ps -Te -A0.01i -V
+++ gawk '-F[ []' '{print $10, $17}'
++++ grep Width
++ MAP_PS_DIM='19.3148 7.78065'
+++ gmt psconvert base_fake_nolabels.ps -Te -A0.01i -V
+++ gawk '-F[ []' '{print $10, $17}'
++++ grep Width
++ MAP_PS_NOLABELS_DIM='17.8547 6.00141'
+++ echo 19.3148 7.78065
+++ gawk '{print $1/2.54}'
++ MAP_PS_WIDTH_IN=7.60425
+++ echo 19.3148 7.78065
+++ gawk '{print $2/2.54}'
++ MAP_PS_HEIGHT_IN=3.06325
+++ echo 17.8547 6.00141
+++ gawk '{print $1/2.54}'
++ MAP_PS_WIDTH_NOLABELS_IN=7.02941
+++ echo 17.8547 6.00141
+++ gawk '{print $2/2.54}'
++ MAP_PS_HEIGHT_NOLABELS_IN=2.36276
++ info_msg 'Map dimensions (in) are W: 7.60425, H: 3.06325'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 10573
+TECTOPLOT 10573: + printf '%s\n' 'Map dimensions (in) are W: 7.60425, H: 3.06325'
+Map dimensions (in) are W: 7.60425, H: 3.06325
++ info_msg 'No label map dimensions (in) are W: 7.02941, H: 2.36276'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 10574
+TECTOPLOT 10574: + printf '%s\n' 'No label map dimensions (in) are W: 7.02941, H: 2.36276'
+No label map dimensions (in) are W: 7.02941, H: 2.36276
+++ echo '7.60425 - 7.02941 > 7.60425/2'
+++ bc
++ [[ 0 -eq 1 ]]
+++ echo 3.06325+12/72
+++ bc -l
++ MAP_PS_HEIGHT_IN_plus=3.22991666666666666666
++ current_userpointfilenumber=1
++ current_usergridnumber=1
++ current_userlinefilenumber=1
++ [[ 1 -eq 1 ]]
+++ echo 10p 0
+++ gawk '{print ($1+8)/72 - $2}'
++ OFFSETV=0.25
+++ echo 0.25
+++ gawk '{print 0-$1}'
++ OFFSETV_M=-0.25
++ [[ 1 -eq 1 ]]
++ echo 'T tectoplot -n -RJ OA -88 12 122 1200k 400k -t GEBCO20 -gres 120 -c -cmag 6.5 10 -legend onmap -inset 1i 20 3.5i 2.7i -author -command -o example18 -megadebug'
++ gmt psxy -T -Y-0.25i -R -J -O -K -Ve
++ gmt psxy -T -X0i -R -J -O -K -Ve
+++ echo 0
+++ gawk '{print 0-$1}'
++ AUTHOR_XSHIFTM=0
++ [[ 1 -eq 1 ]]
++ [[ 1 -eq 1 ]]
++ echo 'T Kyle Bradley'
++ [[ 1 -eq 1 ]]
++ echo 'G 1l'
++ echo 'T Mon May  3 21:21:19 UTC 2021'
+++ echo '7.60425 / 4'
+++ bc -l
++ AUTHOR_W=1.90106250000000000000
+++ echo '7.60425 * (3/4 - 2/10)'
+++ bc -l
++ COMMAND_W=4.18233750000000000000
+++ echo '7.60425 * (1/4 + 1/10)'
+++ bc -l
++ COMMAND_S=2.66148750000000000000
+++ echo '0 - 2.66148750000000000000'
+++ bc -l
++ COMMAND_M=-2.66148750000000000000
++ gmt pslegend author.txt -Dx0/0+w1.90106250000000000000i+jTL+l1.1 -R -J -O -K -Ve
++ gmt psxy -T -X2.66148750000000000000i -R -J -O -K -Ve
++ gmt pslegend command.txt -DjBL+w4.18233750000000000000i+jTL+l1.1 -R -J -O -K -Ve
++ gmt psxy -T -Y0.25i -X-2.66148750000000000000i -R -J -O -K -Ve
++ gmt psxy -T -X0i -R -J -O -K -Ve
++ for plot in '${plots[@]}'
++ case $plot in
++ plottedtopoflag=1
++ [[ 1 -eq 0 ]]
++ [[ '' -eq 1 ]]
++ [[ 0 -eq 0 ]]
++ [[ 1 -eq 0 ]]
++ gmt grdimage topo/dem.nc -I+d -C/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/topo.cpt -E120 -t0 -R -J -O -K -Ve
++ gmt_init_tmpdir
+++ mktemp -d /var/folders/xm/cbbrc5vx5zg506sknnd9drg80000gn/T//gmt.XXXXXX
++ export GMT_TMPDIR=/var/folders/xm/cbbrc5vx5zg506sknnd9drg80000gn/T//gmt.hPfFnf
++ GMT_TMPDIR=/var/folders/xm/cbbrc5vx5zg506sknnd9drg80000gn/T//gmt.hPfFnf
++ gmt grdimage topo/dem.nc -I+d -C/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/topo.cpt -t0 -Rtopo/dem.nc -JQ5i -Ve -Atopo/colored_relief.tif
++ gmt_remove_tmpdir
++ rm -rf /var/folders/xm/cbbrc5vx5zg506sknnd9drg80000gn/T//gmt.hPfFnf
++ unset GMT_TMPDIR
+++ abs_path topo/colored_relief.tif
+++ '[' -d topo/colored_relief.tif ']'
+++ '[' -f topo/colored_relief.tif ']'
+++ [[ topo/colored_relief.tif = /* ]]
+++ [[ topo/colored_relief.tif == */* ]]
++++ cd topo
++++ pwd
+++ echo /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/topo/colored_relief.tif
++ COLORED_RELIEF=/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/topo/colored_relief.tif
++ for plot in '${plots[@]}'
++ case $plot in
++ info_msg 'Plotting focal mechanisms'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 10724
+TECTOPLOT 10724: + printf '%s\n' 'Plotting focal mechanisms'
+Plotting focal mechanisms
++ [[ '' -eq 1 ]]
++ [[ '' -eq 1 ]]
+++ abs_path focal_mechanisms/cmt_thrust.txt
+++ '[' -d focal_mechanisms/cmt_thrust.txt ']'
+++ '[' -f focal_mechanisms/cmt_thrust.txt ']'
+++ [[ focal_mechanisms/cmt_thrust.txt = /* ]]
+++ [[ focal_mechanisms/cmt_thrust.txt == */* ]]
++++ cd focal_mechanisms
++++ pwd
+++ echo /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_thrust.txt
++ CMT_THRUSTPLOT=/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_thrust.txt
+++ abs_path focal_mechanisms/cmt_normal.txt
+++ '[' -d focal_mechanisms/cmt_normal.txt ']'
+++ '[' -f focal_mechanisms/cmt_normal.txt ']'
+++ [[ focal_mechanisms/cmt_normal.txt = /* ]]
+++ [[ focal_mechanisms/cmt_normal.txt == */* ]]
++++ cd focal_mechanisms
++++ pwd
+++ echo /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_normal.txt
++ CMT_NORMALPLOT=/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_normal.txt
+++ abs_path focal_mechanisms/cmt_strikeslip.txt
+++ '[' -d focal_mechanisms/cmt_strikeslip.txt ']'
+++ '[' -f focal_mechanisms/cmt_strikeslip.txt ']'
+++ [[ focal_mechanisms/cmt_strikeslip.txt = /* ]]
+++ [[ focal_mechanisms/cmt_strikeslip.txt == */* ]]
++++ cd focal_mechanisms
++++ pwd
+++ echo /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_strikeslip.txt
++ CMT_STRIKESLIPPLOT=/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_strikeslip.txt
++ SEIS_CPT=/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt
++ [[ 1 -eq 1 ]]
++ gmt psmeca -Egray40 -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_thrust.txt -L0p,black -R -J -O -K -Ve
++ [[ 1 -eq 1 ]]
++ gmt psmeca -Ewhite -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_normal.txt -L0p,black -R -J -O -K -Ve
++ [[ 1 -eq 1 ]]
++ gmt psmeca -Egray80 -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_strikeslip.txt -L0p,black -R -J -O -K -Ve
++ for plot in '${plots[@]}'
++ case $plot in
++ gmt psbasemap -Bxa1 -Bya1 -BWESN -R -J -O -K -Ve
++ for plot in '${plots[@]}'
++ case $plot in
++ gmt_init_tmpdir
+++ mktemp -d /var/folders/xm/cbbrc5vx5zg506sknnd9drg80000gn/T//gmt.XXXXXX
++ export GMT_TMPDIR=/var/folders/xm/cbbrc5vx5zg506sknnd9drg80000gn/T//gmt.M87uoT
++ GMT_TMPDIR=/var/folders/xm/cbbrc5vx5zg506sknnd9drg80000gn/T//gmt.M87uoT
++ gmt pscoast -Rg -JG-88/12/20/1i -Xa3.5i -Ya2.7i -Bg -Df -A5000 -Ggray -Swhite -O -K -Ve
++ gmt psxy mapelements/bounds.txt -W1p,red -Xa3.5i -Ya2.7i -Ve -R -J -O -K
++ gmt_remove_tmpdir
++ rm -rf /var/folders/xm/cbbrc5vx5zg506sknnd9drg80000gn/T//gmt.M87uoT
++ unset GMT_TMPDIR
++ [[ '' -eq 1 ]]
++ current_usergridnumber=1
++ [[ 1 -eq 1 ]]
++ gmt gmtset MAP_TICK_LENGTH_PRIMARY 0.5p MAP_ANNOT_OFFSET_PRIMARY 1.5p MAP_ANNOT_OFFSET_SECONDARY 2.5p MAP_LABEL_OFFSET 2.5p FONT_LABEL 6p,Helvetica,black
++ info_msg 'Plotting legend in its own file'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 12723
+TECTOPLOT 12723: + printf '%s\n' 'Plotting legend in its own file'
+Plotting legend in its own file
++ LEGMAP=maplegend.ps
++ gmt psxy -T -Rk-600k/600k/-200k/200k -JOa-88/12/122/7i -X1i -Yc -K -Ve
++ MSG='Updated legend commands are >>>>> topo cmt graticule inset <<<<<'
++ [[ 1 -eq 1 ]]
++ echo Updated legend commands are '>>>>>' topo cmt graticule inset '<<<<<'
+Updated legend commands are >>>>> topo cmt graticule inset <<<<<
++ echo '# Legend '
++ barplotcount=0
++ plottedneiscptflag=0
++ info_msg 'Plotting colorbar legend items'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 12734
+TECTOPLOT 12734: + printf '%s\n' 'Plotting colorbar legend items'
+Plotting colorbar legend items
++ for plot in '${legendwords[@]}'
++ case $plot in
++ echo 'G 0.2i'
++ echo 'B /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/topo.cpt 0.2i 0.1i+malu -Bxa2f1+l"Elevation (km)"' -W0.001
++ barplotcount=0+1
++ for plot in '${legendwords[@]}'
++ case $plot in
++ [[ 0 -eq 0 ]]
++ [[ ! '' -eq 1 ]]
++ plottedneiscptflag=1
++ echo 'G 0.2i'
++ echo 'B cpts/seisdepth_nodeepest.cpt 0.2i 0.1i+malu+e -Bxaf+l"Earthquake / slab depth (km)"'
++ barplotcount=0+1+1
++ for plot in '${legendwords[@]}'
++ case $plot in
++ for plot in '${legendwords[@]}'
++ case $plot in
++ velboxflag=0
++ [[ 0+1+1 -eq 0 ]]
+++ echo '0 2i 0.1i'
+++ gawk '{print $1+$2+$3 }'
++ LEG2_X=2.1
++ LEG2_Y=3.22991666666666666666
++ count=0
++ NEXTX=0
+++ gawk -v c=0.95 'BEGIN{print c*100 "%" }'
++ GPS_ELLIPSE_TEXT=95%
++ info_msg 'Plotting non-colorbar legend items'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 12877
+TECTOPLOT 12877: + printf '%s\n' 'Plotting non-colorbar legend items'
+Plotting non-colorbar legend items
++ for plot in '${plots[@]}'
++ case $plot in
++ [[ 0 -eq 3 ]]
++ for plot in '${plots[@]}'
++ case $plot in
++ info_msg 'Legend: cmt'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 12882
+TECTOPLOT 12882: + printf '%s\n' 'Legend: cmt'
+Legend: cmt
+++ gawk '
+          @include "tectoplot_functions.awk"
+          # function ceil(x){return int(x)+(x>int(x))}
+          BEGIN {
+            getline;
+            maxmag=$13
+          }
+          {
+            maxmag=($13>maxmag)?$13:maxmag
+          }
+          END {
+            if (maxmag>9) {
+              maxmag=9
+            }
+            printf "%0.1d %0.1d %0.1d", ceil(maxmag)-2, ceil(maxmag)-1, ceil(maxmag)
+          }'
++ MEXP_TRIPLE='6 7 8'
++ MEXP_ARRAY=($(echo $MEXP_TRIPLE))
+++ echo 6 7 8
++ MEXP_V_N=6
++ MEXP_V_S=7
++ MEXP_V_T=8
+++ stretched_m0_from_mw 6
+++ echo 6
+++ gawk -v str=3 -v sref=6 '{
+            mwmod = ($1^str)/(sref^(str-1))
+            a=sprintf("%E", 10^((mwmod + 10.7)*3/2))
+            split(a,b,"+")
+            split(a,c,"E")
+            print c[1], b[2] }'
++ MEXP_N='1.122018 25'
+++ stretched_m0_from_mw 7
+++ echo 7
+++ gawk -v str=3 -v sref=6 '{
+            mwmod = ($1^str)/(sref^(str-1))
+            a=sprintf("%E", 10^((mwmod + 10.7)*3/2))
+            split(a,b,"+")
+            split(a,c,"E")
+            print c[1], b[2] }'
++ MEXP_S='2.196174 30'
+++ stretched_m0_from_mw 8
+++ echo 8
+++ gawk -v str=3 -v sref=6 '{
+            mwmod = ($1^str)/(sref^(str-1))
+            a=sprintf("%E", 10^((mwmod + 10.7)*3/2))
+            split(a,b,"+")
+            split(a,c,"E")
+            print c[1], b[2] }'
++ MEXP_T='2.417315 37'
++ [[ m == \c ]]
++ [[ m == \m ]]
++ echo '-88 12 10 -3.19 1.95 1.24 -0.968 -0.425 1.122018 25 0 0 '
++ gmt psmeca -Ewhite -L0.25p,black -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Sm.07i/0 -R -J -O -K -Ve
++ [[ '' -eq 1 ]]
++ gmt pstext -F+f6p,Helvetica,black+jCB -Ve -J -R -Y0.14i -O -K
++ echo '-88 12 N/6'
++ echo '-88 12 10 0.12 -1.42 1.3 0.143 -0.189 2.196174 30 0 0 '
++ gmt psmeca -Egray80 -L0.25p,black -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Sm.07i/0 -R -J -O -K -X0.35i -Y-0.15i -Ve
++ [[ '' -eq 1 ]]
++ echo '-88 12 SS/7'
++ gmt pstext -F+f6p,Helvetica,black+jCB -Ve -J -R -Y0.15i -O -K
++ echo '-88 12 15 2.12 -1.15 -0.97 0.54 -0.603 2.417315 37 0 0 2016-12-08T17:38:46'
++ gmt psmeca -Egray40 -L0.25p,black -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Sm.07i/0 -X0.35i -Y-0.15i -R -J -O -K -Ve
++ [[ '' -eq 1 ]]
++ echo '-88 12 R/8'
++ gmt pstext -F+f6p,Helvetica,black+jCB -Ve -J -R -Y0.16i -O
+++ gmt psconvert mecaleg.ps -Te -A0.05i -V
+++ gawk '-F[ []' '{print $10, $17}'
++++ grep Width
++ PS_DIM='2.43914 1.07188'
+++ echo 2.43914 1.07188
+++ gawk '{print $1/2.54}'
++ PS_WIDTH_IN=0.960291
+++ echo 2.43914 1.07188
+++ gawk '{print $2/2.54}'
++ PS_HEIGHT_IN=0.422
++ gmt psimage -Dx2.1i/3.22991666666666666666i+w0.960291i mecaleg.eps -R -J -O -K -Ve
+++ echo '3.22991666666666666666 + 0.422 + 0.02'
+++ bc -l
++ LEG2_Y=3.67191666666666666666
++ count=0+1
+++ echo 0.960291 0
+++ gawk '{if ($1>$2) { print $1 } else { print $2 } }'
++ NEXTX=0.960291
++ [[ 0+1 -eq 3 ]]
++ for plot in '${plots[@]}'
++ case $plot in
++ [[ 0+1 -eq 3 ]]
++ for plot in '${plots[@]}'
++ case $plot in
++ [[ 0+1 -eq 3 ]]
++ info_msg 'Legend: printing data sources'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 13168
+TECTOPLOT 13168: + printf '%s\n' 'Legend: printing data sources'
+Legend: printing data sources
++ echo '> 0 0 9p Helvetica,black 0 l 0.1i 7i l'
++ uniq short_datasources.txt
++ gawk 'BEGIN {printf "T Data sources: "} {print}'
++ tr '\n' ' '
++ gmt pslegend datasourceslegend.txt -Dx0.0i/3.06325i+w2i+w7i+jBL -C0.05i/0.05i -J -R -O -K -Ve
++ gmt pslegend legendbars.txt -Dx0i/3.22991666666666666666i+w2i+jBL -C0.05i/0.05i -J -R -O -K -Ve
++ gmt psxy -T -R -J -O -Ve
++ gmt psconvert -Tf -A+m0.5i -Ve maplegend.ps
++ [[ 1 -eq 1 ]]
+++ gmt psconvert maplegend.ps -Te -A+m0.05i -V
+++ gawk '-F[ []' '{print $10, $17}'
++++ grep Width
++ PS_DIM='8.29246 3.11213'
+++ echo 8.29246 3.11213
+++ gawk '{print $1/2.54}'
++ LEG_WIDTH_IN=3.26475
+++ echo 8.29246 3.11213
+++ gawk '{print $2/2.54}'
++ LEG_HEIGHT_IN=1.22525
++ gmt psimage -Dx0i/3.22991666666666666666i+w3.26475i maplegend.eps -R -J -O -K -Ve
++ gmt psxy -T -R -J -O -Ve
++ echo 'tectoplot -n -RJ OA -88 12 122 1200k 400k -t GEBCO20 -gres 120 -c -cmag 6.5 10 -legend onmap -inset 1i 20 3.5i 2.7i -author -command -o example18 -megadebug'
++ echo 'tectoplot -n -RJ OA -88 12 122 1200k 400k -t GEBCO20 -gres 120 -c -cmag 6.5 10 -legend onmap -inset 1i 20 3.5i 2.7i -author -command -o example18 -megadebug'
++ grep %@GMT: map.ps
++ sed -e 's/%@GMT: //'
++ [[ 0 -eq 0 ]]
++ [[ '' -eq 1 ]]
++ gmt psconvert -Tf -A0.5i -Ve map.ps
++ mv map.pdf /Users/kylebradley/Dropbox/scripts/tectoplot/examples/example18.pdf
++ mv example18.history /Users/kylebradley/Dropbox/scripts/tectoplot/examples/example18.history
++ info_msg 'Map is at /Users/kylebradley/Dropbox/scripts/tectoplot/examples/example18.pdf'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 13230
+TECTOPLOT 13230: + printf '%s\n' 'Map is at /Users/kylebradley/Dropbox/scripts/tectoplot/examples/example18.pdf'
+Map is at /Users/kylebradley/Dropbox/scripts/tectoplot/examples/example18.pdf
++ [[ 1 -eq 1 ]]
++ open_prog /Users/kylebradley/Dropbox/scripts/tectoplot/examples/example18.pdf
++ case "$OSTYPE" in
++ open -a Preview /Users/kylebradley/Dropbox/scripts/tectoplot/examples/example18.pdf
++ [[ '' -eq 1 ]]
++ cp /Users/kylebradley/Dropbox/scripts/tectoplot/qgis/tempfiles_to_delete/tectoplot.qgz ./
++ [[ 1 -eq 1 ]]
++ info_msg 'Oblique map (135/25)'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 13268
+TECTOPLOT 13268: + printf '%s\n' 'Oblique map (135/25)'
+Oblique map (135/25)
+++ echo 7
+++ gawk '{print $1+0}'
++ PSSIZENUM=7
++ zrange=($(grid_zrange $BATHY -C -Vn))
+++ grid_zrange /Users/kylebradley/Dropbox/TectoplotData/GEBCO20/GEBCO20_-93.6806_-82.3751_7.59312_16.3581.nc -C -Vn
++++ gmt grdinfo -C /Users/kylebradley/Dropbox/TectoplotData/GEBCO20/GEBCO20_-93.6806_-82.3751_7.59312_16.3581.nc -C -Vn
+++ output='/Users/kylebradley/Dropbox/TectoplotData/GEBCO20/GEBCO20_-93.6806_-82.3751_7.59312_16.3581.nc	-93.6833333333	-82.3708333333	7.5875	16.3625	-6721	4111	0.00416666666667	0.00416666666667	2715	2106	1	1'
++++ echo '/Users/kylebradley/Dropbox/TectoplotData/GEBCO20/GEBCO20_-93.6806_-82.3751_7.59312_16.3581.nc	-93.6833333333	-82.3708333333	7.5875	16.3625	-6721	4111	0.00416666666667	0.00416666666667	2715	2106	1	1'
++++ gawk '{printf "%f", $6+0}'
+++ zmin=-6721.000000
++++ echo '/Users/kylebradley/Dropbox/TectoplotData/GEBCO20/GEBCO20_-93.6806_-82.3751_7.59312_16.3581.nc	-93.6833333333	-82.3708333333	7.5875	16.3625	-6721	4111	0.00416666666667	0.00416666666667	2715	2106	1	1'
++++ gawk '{printf "%f", $7+0}'
+++ zmax=4111.000000
++++ echo '-6721.000000 == 0 && 4111.000000 == 0'
++++ bc
+++ [[ 0 -eq 1 ]]
+++ echo '/Users/kylebradley/Dropbox/TectoplotData/GEBCO20/GEBCO20_-93.6806_-82.3751_7.59312_16.3581.nc	-93.6833333333	-82.3708333333	7.5875	16.3625	-6721	4111	0.00416666666667	0.00416666666667	2715	2106	1	1'
+++ gawk '{printf "%f %f", $6+0, $7+0}'
++ [[ '' -eq 1 ]]
++ OBBOXCMD=
++ echo '#!/bin/sh'
++ echo 'if [[ $# -ge 1 ]]; then'
++ echo '  OBLIQUE_VEXAG=${1}'
++ echo else
++ echo '  OBLIQUE_VEXAG=1'
++ echo fi
++ echo 'if [[ $# -ge 2 ]]; then'
++ echo '  OBLIQUEAZ=${2}'
++ echo else
++ echo '  OBLIQUEAZ=135'
++ echo fi
++ echo 'if [[ $# -ge 3 ]]; then'
++ echo '  OBLIQUEINC=${3}'
++ echo else
++ echo '  OBLIQUEINC=25'
++ echo fi
++ echo 'if [[ $# -ge 4 ]]; then'
++ echo '  OBLIQUERES=${4}'
++ echo else
++ echo '  OBLIQUERES=300'
++ echo fi
++ echo 'DELTAZ_IN=$(echo "${OBLIQUE_VEXAG} * 7 * (4111.000000 - -6721.000000)/ ( (-82.3751 - -93.6806) * 111000 )"  | bc -l)'
++ [[ '' -eq 1 ]]
++ echo 'gmt grdview /Users/kylebradley/Dropbox/TectoplotData/GEBCO20/GEBCO20_-93.6806_-82.3751_7.59312_16.3581.nc -G/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/topo/colored_relief.tif -Rk-600k/600k/-200k/200k -JOa-88/12/122/7i -JZ${DELTAZ_IN}i  -Qi${OBLIQUERES}  -p${OBLIQUEAZ}/${OBLIQUEINC} --GMT_HISTORY=false --MAP_FRAME_TYPE=plain -Ve > oblique.ps'
++ echo 'gmt psconvert oblique.ps -Tf -A0.5i --GMT_HISTORY=false -Ve'
++ chmod a+x ./make_oblique.sh
++ [[ '' -eq 1 ]]
++ [[ '' -eq 1 ]]
++ [[ '' -eq 1 ]]
++ [[ '' -eq 1 ]]
++ [[ 1 -eq 1 ]]
++ PDF_FILES=($(find . -type f -name "*.pdf"))
+++ find . -type f -name '*.pdf'
++ for open_file in '${PDF_FILES[@]}'
++ open_prog ./maplegend.pdf
++ case "$OSTYPE" in
++ open -a Preview ./maplegend.pdf
++ [[ '' -eq 1 ]]
++ exit 0
++ cleanup_on_exit
++ for i in '"${on_exit_items[@]}"'
++ [[ 1 -eq 1 ]]
++ info_msg 'rm -f base_fake.ps base_fake.eps base_fake_nolabels.ps base_fake_nolabels.eps'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 123
+TECTOPLOT 00123: + printf '%s\n' 'rm -f base_fake.ps base_fake.eps base_fake_nolabels.ps base_fake_nolabels.eps'
+rm -f base_fake.ps base_fake.eps base_fake_nolabels.ps base_fake_nolabels.eps
++ rm -f 'base_fake.ps base_fake.eps base_fake_nolabels.ps base_fake_nolabels.eps'
++ for i in '"${on_exit_items[@]}"'
++ [[ 1 -eq 1 ]]
++ info_msg 'rm -f kinsv.ps eqlabel.ps plate.ps mecaleg.ps seissymbol.ps volcanoes.ps velarrow.ps velgps.ps'
++ [[ 1 -eq 1 ]]
++ printf 'TECTOPLOT %05s: ' 123
+TECTOPLOT 00123: + printf '%s\n' 'rm -f kinsv.ps eqlabel.ps plate.ps mecaleg.ps seissymbol.ps volcanoes.ps velarrow.ps velgps.ps'
+rm -f kinsv.ps eqlabel.ps plate.ps mecaleg.ps seissymbol.ps volcanoes.ps velarrow.ps velgps.ps
++ rm -f 'kinsv.ps eqlabel.ps plate.ps mecaleg.ps seissymbol.ps volcanoes.ps velarrow.ps velgps.ps'

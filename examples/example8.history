@@ -1,0 +1,48 @@
+tectoplot -n -r 118.5 121 17 20 -pss 7 -t GEBCO20 -t0 -RJ UTM -aprof IQ JR OW 15k 0.1k -setvars { SPROF_MINELEV -5 SPROF_MAXELEV 1 } -alignxy trench.xy -title Aligned swath profiles -author -authoryx -3.25 -showprof all -command -o example8
+gmt psxy -T -X1i -Yc -Ve -K -R118.5/121/17/20 -JU50/7i
+gmt psxy -T -Y-3.5i -R118.5/121/17/20 -JU50/7i -O -K -Ve
+gmt psxy -T -X0i -R118.5/121/17/20 -JU50/7i -O -K -Ve
+gmt pslegend author.txt -Dx0/0+w1.97819000000000000000i+jTL+l1.1 -R118.5/121/17/20 -JU50/7i -O -K -Ve
+gmt pstext -R0/7/0/8.74724 -Jx1i -O -K -N -M -F+a+f+j @GMTAPI@-S-I-D-D-X-N-000001 --GMT_HISTORY=false
+gmt psxy -T -X2.76946600000000000000i -R118.5/121/17/20 -JU50/7i -O -K -Ve
+gmt pslegend command.txt -DjBL+w4.35201800000000000000i+jTL+l1.1 -R118.5/121/17/20 -JU50/7i -O -K -Ve
+gmt pstext -R0/7/0/8.74724 -Jx1i -O -K -N -M -F+a+f+j @GMTAPI@-S-I-D-D-X-N-000001 --GMT_HISTORY=false
+gmt psxy -T -Y3.5i -X-2.76946600000000000000i -R118.5/121/17/20 -JU50/7i -O -K -Ve
+gmt psxy -T -X0i -R118.5/121/17/20 -JU50/7i -O -K -Ve
+gmt grdimage topo/colored_intensity.tif -t0 -R118.5/121/17/20 -JU50/7i -O -K -Ve
+gmt psbasemap -Bxa0.2 -Bya0.2 '-BWESN+t"Aligned swath profiles"' -R118.5/121/17/20 -JU50/7i -O -K -Ve
+gmt psxy -A -R118.5/121/17/20 -JU50/7i -O -K -W1.5p,black
+gmt psxy -Si0.1i -W0.5p,black -Gblack -Si0.1i -R118.5/121/17/20 -JU50/7i -O -K
+gmt psxy -Si0.1i -W0.5p,black -Si0.1i -R118.5/121/17/20 -JU50/7i -O -K
+gmt psxy -A -R118.5/121/17/20 -JU50/7i -O -K -W1.5p,black
+gmt psxy -Si0.1i -W0.5p,black -Gblack -Si0.1i -R118.5/121/17/20 -JU50/7i -O -K
+gmt psxy -Si0.1i -W0.5p,black -Si0.1i -R118.5/121/17/20 -JU50/7i -O -K
+gmt psxy -A -R118.5/121/17/20 -JU50/7i -O -K -W1.5p,black
+gmt psxy -Si0.1i -W0.5p,black -Gblack -Si0.1i -R118.5/121/17/20 -JU50/7i -O -K
+gmt psxy -Si0.1i -W0.5p,black -Si0.1i -R118.5/121/17/20 -JU50/7i -O -K
+gmt psxy profiles/end_profile_lines.txt -W0.5p,black -R118.5/121/17/20 -JU50/7i -O -K -Ve
+gmt psxy profiles/start_profile_lines.txt -W0.5p,black -R118.5/121/17/20 -JU50/7i -O -K -Ve
+gmt psxy profiles/xy_intersect.txt -W0.5p,black -R118.5/121/17/20 -JU50/7i -O -K -Ve
+gmt psxy profiles/all_intersect.txt -St0.1i -Gwhite -W0.7p,black -R118.5/121/17/20 -JU50/7i -O -K -Ve
+gmt psimage -Dx-0.215374i/-3.059i+w7.43075i profiles/all_profiles.eps -R118.5/121/17/20 -JU50/7i -O -K -Ve
+gmt psxy -T -R118.5/121/17/20 -JU50/7i -K -Vn
+gmt psbasemap -Vn -JX7i/2i -X0 -Y9i -Bltrb -R-102.346/119.265/-4.39431/0.756983 --MAP_FRAME_PEN=thinner,black -K -O
+gmt psxy -Vn profiles/P_IQ_grid2_profileenvelope.txt -t50 -R-102.346/119.265/-4.39431/0.756983 -JX7i/2i -O -K -G127/127/127
+gmt psxy -Vn -R-102.346/119.265/-4.39431/0.756983 -JX7i/2i -O -K -t50 -G63/63/63 profiles/P_IQ_grid2_profileq13envelope.txt
+gmt psxy -Vn -R-102.346/119.265/-4.39431/0.756983 -JX7i/2i -O -K -W0.25p,0/0/0 profiles/P_IQ_grid2_profiledatamedian.txt
+gmt psxy -JX7i/2i -R-102.346/119.265/-4.39431/0.756983 -K -O -Si0.1i -Ya1.05556i -W0.5p,0/0/0 -G0/0/0
+gmt psxy -JX7i/2i -R-102.346/119.265/-4.39431/0.756983 -K -O -Si0.1i -Ya1.05556i -W0.5p,0/0/0
+gmt psxy -Vn profiles/P_JR_grid2_profileenvelope.txt -t50 -R-102.346/119.265/-4.39431/0.756983 -JX7i/2i -O -K -G127/127/127
+gmt psxy -Vn -R-102.346/119.265/-4.39431/0.756983 -JX7i/2i -O -K -t50 -G63/63/63 profiles/P_JR_grid2_profileq13envelope.txt
+gmt psxy -Vn -R-102.346/119.265/-4.39431/0.756983 -JX7i/2i -O -K -W0.25p,0/0/0 profiles/P_JR_grid2_profiledatamedian.txt
+gmt psxy -JX7i/2i -R-102.346/119.265/-4.39431/0.756983 -K -O -Si0.1i -Ya1.05556i -W0.5p,0/0/0 -G0/0/0
+gmt psxy -JX7i/2i -R-102.346/119.265/-4.39431/0.756983 -K -O -Si0.1i -Ya1.05556i -W0.5p,0/0/0
+gmt psxy -Vn profiles/P_OW_grid2_profileenvelope.txt -t50 -R-102.346/119.265/-4.39431/0.756983 -JX7i/2i -O -K -G127/127/127
+gmt psxy -Vn -R-102.346/119.265/-4.39431/0.756983 -JX7i/2i -O -K -t50 -G63/63/63 profiles/P_OW_grid2_profileq13envelope.txt
+gmt psxy -Vn -R-102.346/119.265/-4.39431/0.756983 -JX7i/2i -O -K -W0.25p,0/0/0 profiles/P_OW_grid2_profiledatamedian.txt
+gmt psxy -JX7i/2i -R-102.346/119.265/-4.39431/0.756983 -K -O -Si0.1i -Ya1.05556i -W0.5p,0/0/0 -G0/0/0
+gmt psxy -JX7i/2i -R-102.346/119.265/-4.39431/0.756983 -K -O -Si0.1i -Ya1.05556i -W0.5p,0/0/0
+gmt psxy -JX7i/2i -R-102.346/119.265/-4.39431/0.756983 -K -O -St0.1i -Ya1.05556i -W0.7p,black -Gwhite
+gmt psbasemap -Vn -BtESW+t -Baf '-Bx+lDistance (km)' --FONT_TITLE=10p,Helvetica,black --MAP_FRAME_PEN=thinner,black -R-102.346/119.265/-4.39431/0.756983 -JX7i/2i -O -K
+gmt psxy -T -R-102.346/119.265/-4.39431/0.756983 -JX7i/2i -O -Vn
+gmt psxy -T -R118.5/121/17/20 -JU50/7i -O -Ve

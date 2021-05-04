@@ -1,0 +1,1 @@
+Example 2: Two stereographic global plots in one PDF

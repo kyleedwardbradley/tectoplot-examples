@@ -1,4 +1,4 @@
-tectoplot -n -r CL -v BG 0 -RJ UTM -b c -z -zmag 5 10 -cmag 5 10 -c ORIGIN -eqlabel 7.5 datemag -legend onmap -author -command -o example7
+tectoplot -r CL -v BG 0 -RJ UTM -b c -z -zmag 5 10 -cmag 5 10 -c ORIGIN -eqlabel 7.5 datemag -legend onmap -author -command -o example7
 gmt psxy -T -X1i -Yc -Ve -K -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i
 gmt psxy -T -Y-0.25i -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -K -Ve
 gmt psxy -T -X0i -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -K -Ve
@@ -9,13 +9,13 @@ gmt pslegend command.txt -DjBL+w4.31778050000000000000i+jTL+l1.1 -R-75.71032/-66
 gmt pstext -R0/7/0/30.3876 -Jx1i -O -K -N -M -F+a+f+j @GMTAPI@-S-I-D-D-X-N-000001 --GMT_HISTORY=false
 gmt psxy -T -Y0.25i -X-2.74767850000000000000i -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -K -Ve
 gmt psxy -T -X0i -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -K -Ve
-gmt grdimage /Users/kylebradley/Dropbox/TectoplotData/WGM2012/BG_resample.nc -C/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/grav.cpt -t0 -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -K -Ve
-gmt psxy contourtmp.dat -C/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -W0.5p+z -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -K -Ve
-gmt psxy contourtmp.dat -C/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -W0.5p+z -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -K -Ve
-gmt psxy seismicity/eqs_scaled.txt -C/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -i0,1,2,3+s1 -W0.25p,black -Sc -t0 -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -K -Ve
-gmt psmeca -Egray40 -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_thrust.txt -L0p,black -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -K -Ve
-gmt psmeca -Ewhite -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_normal.txt -L0p,black -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -K -Ve
-gmt psmeca -Egray80 -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_strikeslip.txt -L0p,black -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -K -Ve
+gmt grdimage /Users/kylebradley/Dropbox/TectoplotData/WGM2012/BG_resample.nc -C/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/grav.cpt -t0 -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -K -Ve
+gmt psxy contourtmp.dat -C/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/seisdepth.cpt -W0.5p+z -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -K -Ve
+gmt psxy contourtmp.dat -C/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/seisdepth.cpt -W0.5p+z -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -K -Ve
+gmt psxy seismicity/eqs_scaled.txt -C/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/seisdepth.cpt -i0,1,2,3+s1 -W0.25p,black -Sc -t0 -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -K -Ve
+gmt psmeca -Egray40 -Z/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/focal_mechanisms/cmt_thrust.txt -L0p,black -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -K -Ve
+gmt psmeca -Ewhite -Z/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/focal_mechanisms/cmt_normal.txt -L0p,black -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -K -Ve
+gmt psmeca -Egray80 -Z/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/focal_mechanisms/cmt_strikeslip.txt -L0p,black -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -K -Ve
 gmt pstext -Dj0.1i/0.2i -Gwhite -F+f+a+j -W0.5p,black -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -K -Ve
 gmt pstext -Dj0.1i/0.2i -Gwhite -F+f+a+j -W0.5p,black -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -K -Ve
 gmt psbasemap -Bxa1 -Bya1 -BWESN -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -K -Ve
@@ -35,11 +35,11 @@ gmt psxy -W0.5p,black -Gwhite -i0,1,2+s1 -Sc -t0 -R-75.71032/-66.417557/-55.9794
 gmt pstext -F+f6p,Helvetica,black+jCB -Ve -JU19/7i -R-75.71032/-66.417557/-55.979496/-17.507553 -Y0.16i -O
 gmt psimage -Dx2.1i/31.50866666666666666666i+w1.01275i mecaleg.eps -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -K -Ve
 gmt psxy -T -X0i -Yc -Ve -K -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i
-gmt psmeca -Ewhite -L0.25p,black -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Sm.07i/0 -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -K -Ve
+gmt psmeca -Ewhite -L0.25p,black -Z/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Sm.07i/0 -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -K -Ve
 gmt pstext -F+f6p,Helvetica,black+jCB -Ve -JU19/7i -R-75.71032/-66.417557/-55.979496/-17.507553 -Y0.14i -O -K
-gmt psmeca -Egray80 -L0.25p,black -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Sm.07i/0 -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -K -X0.35i -Y-0.15i -Ve
+gmt psmeca -Egray80 -L0.25p,black -Z/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Sm.07i/0 -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -K -X0.35i -Y-0.15i -Ve
 gmt pstext -F+f6p,Helvetica,black+jCB -Ve -JU19/7i -R-75.71032/-66.417557/-55.979496/-17.507553 -Y0.15i -O -K
-gmt psmeca -Egray40 -L0.25p,black -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Sm.07i/0 -X0.35i -Y-0.15i -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -K -Ve
+gmt psmeca -Egray40 -L0.25p,black -Z/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Sm.07i/0 -X0.35i -Y-0.15i -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -K -Ve
 gmt pstext -F+f6p,Helvetica,black+jCB -Ve -JU19/7i -R-75.71032/-66.417557/-55.979496/-17.507553 -Y0.16i -O
 gmt psimage -Dx2.1i/31.99316666666666666666i+w0.728035i eqlabel.eps -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -K -Ve
 gmt psxy -T -X0i -Yc -Ve -K -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i
@@ -47,7 +47,7 @@ gmt pstext -Gwhite -W0.5p,black -F+f10p,Helvetica,black+jLB -R-75.71032/-66.4175
 gmt pslegend datasourceslegend.txt -Dx0.0i/30.858i+w2i+w7i+jBL -C0.05i/0.05i -JU19/7i -R-75.71032/-66.417557/-55.979496/-17.507553 -O -K -Ve
 gmt pstext -R0/7/0/30.3876 -Jx1i -O -K -N -M -F+a+f+j @GMTAPI@-S-I-D-D-X-N-000001 --GMT_HISTORY=false
 gmt pslegend legendbars.txt -Dx0i/31.02466666666666666666i+w2i+jBL -C0.05i/0.05i -JU19/7i -R-75.71032/-66.417557/-55.979496/-17.507553 -O -K -Ve
-gmt psscale -C/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/grav.cpt -O -K -Dx1i/0.7i+w1.6i/0.1i+malu+h+jTC '-Bxa100f50+lBG gravity (mgal)' --GMT_HISTORY=false
+gmt psscale -C/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/grav.cpt -O -K -Dx1i/0.7i+w1.6i/0.1i+malu+h+jTC '-Bxa100f50+lBG gravity (mgal)' --GMT_HISTORY=false
 gmt psscale -Ccpts/seisdepth_nodeepest.cpt -O -K -Dx1i/0.275i+w1.6i/0.1i+malu+e+h+jTC '-Bxaf+lEarthquake / slab depth (km)' --GMT_HISTORY=false
 gmt psxy -T -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -Ve
 gmt psxy -T -R-75.71032/-66.417557/-55.979496/-17.507553 -JU19/7i -O -Ve

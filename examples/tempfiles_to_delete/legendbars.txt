@@ -1,3 +1,0 @@
-# Legend 
-G 0.2i
-B /Users/kylebradley/Dropbox/scripts/tectoplot_examples/examples/tempfiles_to_delete/cpts/topo.cpt 0.2i 0.1i+malu -Bxa2f1+l"Elevation (km)" -W0.001

@@ -1,4 +1,4 @@
-tectoplot -n -r GR -t GEBCO20 -tt 50 -gres 100 -RJ UTM -p GBM Nubia -pe -pl -g AF -i 2 -setvars { GPS_FILLCOLOR black PLATELABEL_SIZE 10p } -author -command -legend onmap -title Aegean GPS velocities and blocks -o example4
+tectoplot -r GR -t GEBCO20 -tt 50 -gres 100 -RJ UTM -p GBM Nubia -pe -pl -g AF -i 2 -setvars { GPS_FILLCOLOR black PLATELABEL_SIZE 10p } -author -command -legend onmap -title Aegean GPS velocities and blocks -o example4
 gmt psxy -T -X1i -Yc -Ve -K -R19.374439/28.246399/34.809639/41.757412 -JU34/7i
 gmt psxy -T -Y-0.25i -R19.374439/28.246399/34.809639/41.757412 -JU34/7i -O -K -Ve
 gmt psxy -T -X0i -R19.374439/28.246399/34.809639/41.757412 -JU34/7i -O -K -Ve
@@ -9,7 +9,7 @@ gmt pslegend command.txt -DjBL+w4.22950000000000000000i+jTL+l1.1 -R19.374439/28.
 gmt pstext -R0/7/0/6.86451 -Jx1i -O -K -N -M -F+a+f+j @GMTAPI@-S-I-D-D-X-N-000001 --GMT_HISTORY=false
 gmt psxy -T -Y0.25i -X-2.69150000000000000000i -R19.374439/28.246399/34.809639/41.757412 -JU34/7i -O -K -Ve
 gmt psxy -T -X0i -R19.374439/28.246399/34.809639/41.757412 -JU34/7i -O -K -Ve
-gmt grdimage topo/dem.nc -I+d -C/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/topo.cpt -E100 -t50 -R19.374439/28.246399/34.809639/41.757412 -JU34/7i -O -K -Ve
+gmt grdimage topo/dem.nc -I+d -C/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/topo.cpt -E100 -t50 -R19.374439/28.246399/34.809639/41.757412 -JU34/7i -O -K -Ve
 gmt psxy /Users/kylebradley/Dropbox/scripts/tectoplot/platemodels/GBM/block.180.dat -W1.0p,black@30 -R19.374439/28.246399/34.809639/41.757412 -JU34/7i -O -K -Ve
 gmt pstext -C0.1+t -F+f10p,Helvetica,black+jCB -R19.374439/28.246399/34.809639/41.757412 -JU34/7i -O -K -Ve
 gmt psvelo gps/gps.txt -W0.25p,black -Gblack -A0.03/0.12/0.06 -Se.02/0.95/0 -L -R19.374439/28.246399/34.809639/41.757412 -JU34/7i -O -K -Ve
@@ -23,6 +23,6 @@ gmt pstext -F+f6p,Helvetica,black+jLB -JU34/7i -R19.374439/28.246399/34.809639/4
 gmt pslegend datasourceslegend.txt -Dx0.0i/7.81902i+w2i+w7i+jBL -C0.05i/0.05i -JU34/7i -R19.374439/28.246399/34.809639/41.757412 -O -K -Ve
 gmt pstext -R0/7/0/6.86451 -Jx1i -O -K -N -M -F+a+f+j @GMTAPI@-S-I-D-D-X-N-000001 --GMT_HISTORY=false
 gmt pslegend legendbars.txt -Dx0i/7.98568666666666666666i+w2i+jBL -C0.05i/0.05i -JU34/7i -R19.374439/28.246399/34.809639/41.757412 -O -K -Ve
-gmt psscale -C/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/topo.cpt -O -K -Dx1i/0.275i+w1.6i/0.1i+malu+h+jTC '-Bxa2f1+lElevation (km)' -W0.001 --GMT_HISTORY=false
+gmt psscale -C/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/topo.cpt -O -K -Dx1i/0.275i+w1.6i/0.1i+malu+h+jTC '-Bxa2f1+lElevation (km)' -W0.001 --GMT_HISTORY=false
 gmt psxy -T -R19.374439/28.246399/34.809639/41.757412 -JU34/7i -O -Ve
 gmt psxy -T -R19.374439/28.246399/34.809639/41.757412 -JU34/7i -O -Ve

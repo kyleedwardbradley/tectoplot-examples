@@ -1,0 +1,5 @@
+tectoplot -r 118.5 121 17 20 -v BG 0
+gmt psxy -T -X1i -Yc -Ve -K -R118.5/121/17/20 -JQ119.75000000000000000000/7i
+gmt grdimage /Users/kylebradley/Dropbox/TectoplotData/WGM2012/BG_resample.nc -C/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/grav.cpt -t0 -R118.5/121/17/20 -JQ119.75000000000000000000/7i -O -K -Ve
+gmt psbasemap -Bxa0.2 -Bya0.2 -BWESN -R118.5/121/17/20 -JQ119.75000000000000000000/7i -O -K -Ve
+gmt psxy -T -R118.5/121/17/20 -JQ119.75000000000000000000/7i -O -Ve

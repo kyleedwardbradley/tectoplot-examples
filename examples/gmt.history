@@ -1,14 +1,14 @@
 # GMT 6 Session common arguments shelf
 BEGIN GMT 6.1.1
-J	S
+J	U
 JH	H135/8i
 JN	N0/4i
 JO	Oa-88/12/122/7i
 JQ	Q158.00000000000000000000/7i
 JR	R-180/8i
-JS	S-80/-10/90/5i
+JS	S120/0/90/4i
 JU	U55/7i
 JV	V0/7i
 JW	W45/8i
-R	g
+R	141/152/-45/-38
 END

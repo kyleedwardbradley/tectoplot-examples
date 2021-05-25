@@ -1,5 +1,7 @@
-@ auto auto auto auto /Users/kylebradley/Dropbox/scripts/tectoplot/examples/trench.xy
-      S grav/grav.nc 1 1k 15k 1k
-      P P1 black 0 N 119.25 19.1 120.25 17.9
-      P P2 green 0 N 119.25 19.7 120.25 18.5
-      P P3 red 0 N 119.75 19.7 120.75 18.5
+@ auto auto auto auto /Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/trench.xy
+L |Distance (km)|Distance (km)|Gravity (mgal)
+G grav/grav.nc 0.01 1k 70k 1k cpts/grav.cpt scale
+S grav/grav.nc 1 1k 70k 1k
+P P1 black 0 N 119.25 19.1 120.25 17.9
+P P2 green 0 N 119.25 19.7 120.25 18.5
+P P3 red 0 N 119.75 19.7 120.75 18.5

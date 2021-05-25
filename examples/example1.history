@@ -1,4 +1,4 @@
-tectoplot -n -command -RJ R -180 -t 10m -gres 30 -title Winkel -pos 9i -0.5i -ips ./tempfiles_to_delete/map.ps -pss 8 -a l -o example1
+tectoplot -command -RJ R -180 -t 10m -gres 30 -title Winkel -pos 9i -0.5i -ips ./tempfiles_to_delete/map.ps -pss 8 -a l -o example1
 gmt psxy -T -X1i -Yc -Ve -K -Rg -JN0/8i
 gmt psxy -T -Y-0.25i -Rg -JN0/8i -O -K -Ve
 gmt psxy -T -X0i -Rg -JN0/8i -O -K -Ve
@@ -6,9 +6,9 @@ gmt pslegend command.txt -Dx0/0+w7.69769100000000000000i+jTL+l1.1 -Rg -JN0/8i -O
 gmt pstext -R0/8/0/4.0575 -Jx1i -O -K -N -M -F+a+f+j @GMTAPI@-S-I-D-D-X-N-000001 --GMT_HISTORY=false
 gmt psxy -T -Y0.25i -Rg -JN0/8i -O -K -Ve
 gmt psxy -T -X0i -Rg -JN0/8i -O -K -Ve
-gmt grdimage topo/dem.nc -I+d -C/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/topo.cpt -E30 -t0 -Rg -JN0/8i -O -K -Ve
+gmt grdimage topo/dem.nc -I+d -C/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/topo.cpt -E30 -t0 -Rg -JN0/8i -O -K -Ve
 gmt pscoast -Dl -W1/0.5p,black -W2/0.2p,black -A100 -Rg -JN0/8i -O -K -Ve
-gmt psxy seismicity/eqs_scaled.txt -C/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -i0,1,2,3+s1 -W0.25p,black -Sc -t0 -Rg -JN0/8i -O -K -Ve
+gmt psxy seismicity/eqs_scaled.txt -C/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/seisdepth.cpt -i0,1,2,3+s1 -W0.25p,black -Sc -t0 -Rg -JN0/8i -O -K -Ve
 gmt psbasemap -Bxa30 -Bya30 -BWESN+t"Robinson" -Rg -JN0/8i -O -K -Ve
 gmt psxy -T -Rg -JN0/8i -O -K -Ve
 gmt psxy -T -X9i -Y0i -O -Ve -K -Rg -JW45/8i
@@ -18,11 +18,11 @@ gmt pslegend command.txt -Dx0/0+w7.69769100000000000000i+jTL+l1.1 -Rg -JW45/8i -
 gmt pstext -R0/8/0/4 -Jx1i -O -K -N -M -F+a+f+j @GMTAPI@-S-I-D-D-X-N-000001 --GMT_HISTORY=false
 gmt psxy -T -Y0.25i -Rg -JW45/8i -O -K -Ve
 gmt psxy -T -X0i -Rg -JW45/8i -O -K -Ve
-gmt grdimage topo/dem.nc -I+d -C/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/topo.cpt -E30 -t0 -Rg -JW45/8i -O -K -Ve
+gmt grdimage topo/dem.nc -I+d -C/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/topo.cpt -E30 -t0 -Rg -JW45/8i -O -K -Ve
 gmt pscoast -Dl -W1/0.5p,black -W2/0.2p,black -A100 -Rg -JW45/8i -O -K -Ve
-gmt psmeca -Egray40 -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_thrust.txt -L0p,black -Rg -JW45/8i -O -K -Ve
-gmt psmeca -Ewhite -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_normal.txt -L0p,black -Rg -JW45/8i -O -K -Ve
-gmt psmeca -Egray80 -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_strikeslip.txt -L0p,black -Rg -JW45/8i -O -K -Ve
+gmt psmeca -Egray40 -Z/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/focal_mechanisms/cmt_thrust.txt -L0p,black -Rg -JW45/8i -O -K -Ve
+gmt psmeca -Ewhite -Z/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/focal_mechanisms/cmt_normal.txt -L0p,black -Rg -JW45/8i -O -K -Ve
+gmt psmeca -Egray80 -Z/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/focal_mechanisms/cmt_strikeslip.txt -L0p,black -Rg -JW45/8i -O -K -Ve
 gmt psbasemap -Bxa30 -Bya30 -BWESN+t"Mollweide" -Rg -JW45/8i -O -K -Ve
 gmt psxy -T -Rg -JW45/8i -O -K -Ve
 gmt psxy -T -X-9i -Y-5.5i -O -Ve -K -Rg -JH135/8i
@@ -32,9 +32,9 @@ gmt pslegend command.txt -Dx0/0+w7.69769100000000000000i+jTL+l1.1 -Rg -JH135/8i 
 gmt pstext -R0/8/0/4 -Jx1i -O -K -N -M -F+a+f+j @GMTAPI@-S-I-D-D-X-N-000001 --GMT_HISTORY=false
 gmt psxy -T -Y0.25i -Rg -JH135/8i -O -K -Ve
 gmt psxy -T -X0i -Rg -JH135/8i -O -K -Ve
-gmt grdimage topo/dem.nc -I+d -C/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/topo.cpt -E30 -t0 -Rg -JH135/8i -O -K -Ve
+gmt grdimage topo/dem.nc -I+d -C/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/topo.cpt -E30 -t0 -Rg -JH135/8i -O -K -Ve
 gmt pscoast -Dl -W1/0.5p,black -W2/0.2p,black -A100 -Rg -JH135/8i -O -K -Ve
-gmt psxy seismicity/eqs_scaled.txt -C/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -i0,1,2,3+s1 -W0.25p,black -Sc -t0 -Rg -JH135/8i -O -K -Ve
+gmt psxy seismicity/eqs_scaled.txt -C/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/seisdepth.cpt -i0,1,2,3+s1 -W0.25p,black -Sc -t0 -Rg -JH135/8i -O -K -Ve
 gmt psbasemap -Bxa30 -Bya30 -BWESN+t"Hammer" -Rg -JH135/8i -O -K -Ve
 gmt psxy -T -Rg -JH135/8i -O -K -Ve
 gmt psxy -T -X9i -Y-0.5i -O -Ve -K -Rg -JR-180/8i
@@ -44,7 +44,7 @@ gmt pslegend command.txt -Dx0/0+w7.69769100000000000000i+jTL+l1.1 -Rg -JR-180/8i
 gmt pstext -R0/8/0/4.8884 -Jx1i -O -K -N -M -F+a+f+j @GMTAPI@-S-I-D-D-X-N-000001 --GMT_HISTORY=false
 gmt psxy -T -Y0.25i -Rg -JR-180/8i -O -K -Ve
 gmt psxy -T -X0i -Rg -JR-180/8i -O -K -Ve
-gmt grdimage topo/dem.nc -I+d -C/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/topo.cpt -E30 -t0 -Rg -JR-180/8i -O -K -Ve
+gmt grdimage topo/dem.nc -I+d -C/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/topo.cpt -E30 -t0 -Rg -JR-180/8i -O -K -Ve
 gmt pscoast -Dl -W1/0.5p,black -W2/0.2p,black -A100 -Rg -JR-180/8i -O -K -Ve
 gmt psbasemap -Bxa30 -Bya30 -BWESN+t"Winkel" -Rg -JR-180/8i -O -K -Ve
 gmt psxy -T -Rg -JR-180/8i -O -Ve

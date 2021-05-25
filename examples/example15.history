@@ -1,4 +1,4 @@
-tectoplot -n -r 115.8 117.2 -9.2 -7.8 -ips ./tempfiles_to_delete/map.ps -z -zadd /Users/kylebradley/Dropbox/scripts/tectoplot/data_examples/LombokHypodd.dat replace -pos 0i 0i -c ORIGIN -cadd /Users/kylebradley/Dropbox/scripts/tectoplot/data_examples/LombokFocals_aki.dat a replace -pss 7 -zcolor 5 25 -o example15
+tectoplot -r 115.8 117.2 -9.2 -7.8 -ips ./tempfiles_to_delete/map.ps -z -zadd /Users/kylebradley/Dropbox/scripts/tectoplot-examples/data_examples/LombokHypodd.dat replace -pos 0i 0i -c ORIGIN -cadd /Users/kylebradley/Dropbox/scripts/tectoplot-examples/data_examples/LombokFocals_aki.dat a replace -pss 7 -zcolor 5 25 -o example15
 gmt psxy -T -X1i -Yc -Ve -K -R115.8/117.2/-9.2/-7.8 -JQ116.50000000000000000000/7i
 gmt psxy -T -Y-0.25i -R115.8/117.2/-9.2/-7.8 -JQ116.50000000000000000000/7i -O -K -Ve
 gmt psxy -T -X0i -R115.8/117.2/-9.2/-7.8 -JQ116.50000000000000000000/7i -O -K -Ve
@@ -11,15 +11,15 @@ gmt psxy -T -Y0.25i -X-2.78171600000000000000i -R115.8/117.2/-9.2/-7.8 -JQ116.50
 gmt psxy -T -X0i -R115.8/117.2/-9.2/-7.8 -JQ116.50000000000000000000/7i -O -K -Ve
 gmt grdimage topo/colored_intensity.tif -E100 -t0 -R115.8/117.2/-9.2/-7.8 -JQ116.50000000000000000000/7i -O -K -Ve
 gmt psxy seismicity/eqs_scaled.txt -Ccpts/seisdepth.cpt -i0,1,2,3+s1 -W0.25p,black -Sc -t0 -R115.8/117.2/-9.2/-7.8 -JQ116.50000000000000000000/7i -O -K -Ve
-gmt psmeca -Egray100 -Zcpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_thrust.txt -L0p,black -R115.8/117.2/-9.2/-7.8 -JQ116.50000000000000000000/7i -O -K -Ve
-gmt psmeca -Egray100 -Zcpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_normal.txt -L0p,black -R115.8/117.2/-9.2/-7.8 -JQ116.50000000000000000000/7i -O -K -Ve
-gmt psmeca -Egray100 -Zcpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_strikeslip.txt -L0p,black -R115.8/117.2/-9.2/-7.8 -JQ116.50000000000000000000/7i -O -K -Ve
+gmt psmeca -Egray100 -Zcpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/focal_mechanisms/cmt_thrust.txt -L0p,black -R115.8/117.2/-9.2/-7.8 -JQ116.50000000000000000000/7i -O -K -Ve
+gmt psmeca -Egray100 -Zcpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/focal_mechanisms/cmt_normal.txt -L0p,black -R115.8/117.2/-9.2/-7.8 -JQ116.50000000000000000000/7i -O -K -Ve
+gmt psmeca -Egray100 -Zcpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/focal_mechanisms/cmt_strikeslip.txt -L0p,black -R115.8/117.2/-9.2/-7.8 -JQ116.50000000000000000000/7i -O -K -Ve
 gmt psbasemap -Bxa0.2 -Bya0.2 -BWESN -R115.8/117.2/-9.2/-7.8 -JQ116.50000000000000000000/7i -O -K -Ve
 gmt psxy -T -R115.8/117.2/-9.2/-7.8 -JQ116.50000000000000000000/7i -O -K -Ve
 gmt psxy -T -X0i -Y0i -O -Ve -K -R115.8/117.2/-9.2/-7.8 -JQ116.50000000000000000000/7i
-gmt psxy seismicity/eqs_scaled.txt -C/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -i0,1,2,3+s1 -W0.25p,black -Sc -t0 -R115.8/117.2/-9.2/-7.8 -JQ116.50000000000000000000/7i -O -K -Ve
-gmt psmeca -Egray40 -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_thrust.txt -L0p,black -R115.8/117.2/-9.2/-7.8 -JQ116.50000000000000000000/7i -O -K -Ve
-gmt psmeca -Ewhite -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_normal.txt -L0p,black -R115.8/117.2/-9.2/-7.8 -JQ116.50000000000000000000/7i -O -K -Ve
-gmt psmeca -Egray80 -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_strikeslip.txt -L0p,black -R115.8/117.2/-9.2/-7.8 -JQ116.50000000000000000000/7i -O -K -Ve
+gmt psxy seismicity/eqs_scaled.txt -C/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/seisdepth.cpt -i0,1,2,3+s1 -W0.25p,black -Sc -t0 -R115.8/117.2/-9.2/-7.8 -JQ116.50000000000000000000/7i -O -K -Ve
+gmt psmeca -Egray40 -Z/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/focal_mechanisms/cmt_thrust.txt -L0p,black -R115.8/117.2/-9.2/-7.8 -JQ116.50000000000000000000/7i -O -K -Ve
+gmt psmeca -Ewhite -Z/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/focal_mechanisms/cmt_normal.txt -L0p,black -R115.8/117.2/-9.2/-7.8 -JQ116.50000000000000000000/7i -O -K -Ve
+gmt psmeca -Egray80 -Z/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/focal_mechanisms/cmt_strikeslip.txt -L0p,black -R115.8/117.2/-9.2/-7.8 -JQ116.50000000000000000000/7i -O -K -Ve
 gmt psbasemap -Bxa0.2 -Bya0.2 -BWESN -R115.8/117.2/-9.2/-7.8 -JQ116.50000000000000000000/7i -O -K -Ve
 gmt psxy -T -R115.8/117.2/-9.2/-7.8 -JQ116.50000000000000000000/7i -O -Ve

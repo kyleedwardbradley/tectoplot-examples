@@ -1,4 +1,4 @@
-tectoplot -n -RJ V -ac lightbrown lightblue -a l -c -cadd /Users/kylebradley/Dropbox/scripts/tectoplot/data_examples/quick.ndk K replace -cmag 7 10 -title Large QuickCMT earthquakes -legend onmap -author -command -o example16
+tectoplot -RJ V -ac lightbrown lightblue -a l -c -cadd /Users/kylebradley/Dropbox/scripts/tectoplot-examples/data_examples/quick.ndk K replace -cmag 7 10 -title Large QuickCMT earthquakes -legend onmap -author -command -o example16
 gmt psxy -T -X1i -Yc -Ve -K -Rg -JV0/7i
 gmt psxy -T -Y-0.25i -Rg -JV0/7i -O -K -Ve
 gmt psxy -T -X0i -Rg -JV0/7i -O -K -Ve
@@ -10,19 +10,19 @@ gmt pstext -R0/7/0/7 -Jx1i -O -K -N -M -F+a+f+j @GMTAPI@-S-I-D-D-X-N-000001 --GM
 gmt psxy -T -Y0.25i -X-2.70497500000000000000i -Rg -JV0/7i -O -K -Ve
 gmt psxy -T -X0i -Rg -JV0/7i -O -K -Ve
 gmt pscoast -Dl -W1/0.5p,black -W2/0.2p,black -Glightbrown -Slightblue -A100 -Rg -JV0/7i -O -K -Ve
-gmt psmeca -Egray40 -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_thrust.txt -L0p,black -Rg -JV0/7i -O -K -Ve
-gmt psmeca -Ewhite -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_normal.txt -L0p,black -Rg -JV0/7i -O -K -Ve
-gmt psmeca -Egray80 -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/focal_mechanisms/cmt_strikeslip.txt -L0p,black -Rg -JV0/7i -O -K -Ve
+gmt psmeca -Egray40 -Z/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/focal_mechanisms/cmt_thrust.txt -L0p,black -Rg -JV0/7i -O -K -Ve
+gmt psmeca -Ewhite -Z/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/focal_mechanisms/cmt_normal.txt -L0p,black -Rg -JV0/7i -O -K -Ve
+gmt psmeca -Egray80 -Z/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Tn -Sm.07i/0 /Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/focal_mechanisms/cmt_strikeslip.txt -L0p,black -Rg -JV0/7i -O -K -Ve
 gmt psbasemap -Bxa30 -Bya30 '-BWESN+t"Large QuickCMT earthquakes"' -Rg -JV0/7i -O -K -Ve
 gmt psimage -Dx0i/7.88591666666666666666i+w3.26475i maplegend.eps -Rg -JV0/7i -O -K -Ve
 gmt psxy -T -Rg -JV0/7i -X1i -Yc -K -Ve
 gmt psimage -Dx2.1i/7.88591666666666666666i+w0.861i mecaleg.eps -Rg -JV0/7i -O -K -Ve
 gmt psxy -T -X0i -Yc -Ve -K -Rg -JV0/7i
-gmt psmeca -Ewhite -L0.25p,black -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Sm.07i/0 -Rg -JV0/7i -O -K -Ve
+gmt psmeca -Ewhite -L0.25p,black -Z/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Sm.07i/0 -Rg -JV0/7i -O -K -Ve
 gmt pstext -F+f6p,Helvetica,black+jCB -Ve -JV0/7i -Rg -Y0.14i -O -K
-gmt psmeca -Egray80 -L0.25p,black -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Sm.07i/0 -Rg -JV0/7i -O -K -X0.35i -Y-0.15i -Ve
+gmt psmeca -Egray80 -L0.25p,black -Z/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Sm.07i/0 -Rg -JV0/7i -O -K -X0.35i -Y-0.15i -Ve
 gmt pstext -F+f6p,Helvetica,black+jCB -Ve -JV0/7i -Rg -Y0.15i -O -K
-gmt psmeca -Egray40 -L0.25p,black -Z/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Sm.07i/0 -X0.35i -Y-0.15i -Rg -JV0/7i -O -K -Ve
+gmt psmeca -Egray40 -L0.25p,black -Z/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/seisdepth.cpt -Sm.07i/0 -X0.35i -Y-0.15i -Rg -JV0/7i -O -K -Ve
 gmt pstext -F+f6p,Helvetica,black+jCB -Ve -JV0/7i -Rg -Y0.16i -O
 gmt pslegend datasourceslegend.txt -Dx0.0i/7.71925i+w2i+w7i+jBL -C0.05i/0.05i -JV0/7i -Rg -O -K -Ve
 gmt pstext -R0/7/0/7 -Jx1i -O -K -N -M -F+a+f+j @GMTAPI@-S-I-D-D-X-N-000001 --GMT_HISTORY=false

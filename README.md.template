@@ -33,10 +33,10 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 tectoplot_examples
 
 install using:
-git clone https://github.com/kyleedwardbradley/tectoplot_examples tectoplot_examples
+git clone https://github.com/kyleedwardbradley/tectoplot-examples tectoplot-examples
 
-This repository hosts a script (make_examples.sh), sample data files, and the
-resulting outputs for example use of tectoplot.
+This repository hosts a script (make_tectoplot_examples.sh), sample data files,
+and the resulting outputs for example uses of tectoplot.
 
 tectoplot repository: <a href="https://github.com/kyleedwardbradley/tectoplot">https://github.com/kyleedwardbradley/tectoplot</a>
 

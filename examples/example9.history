@@ -1,4 +1,4 @@
-tectoplot -n -r 118.5 121 17 20 -pss 7 -RJ UTM -t GEBCO20 -t0 -tx -v BG 50 rescale -ac darkgreen -a f -tn 1000 -clipgrav -mprof profile.control -title Bouguer anomaly -author -authoryx -3.25 -command -legend onmap -o example9
+tectoplot -r 118.5 121 17 20 -pss 7 -RJ UTM -t GEBCO20 -t0 -tx -v BG 50 rescale -ac darkgreen -a f -tn 1000 -clipgrav -mprof profile.control -title Bouguer anomaly -author -authoryx -3.25 -command -legend onmap -o example9 -showprof all
 gmt psxy -T -X1i -Yc -Ve -K -R118.5/121/17/20 -JU50/7i
 gmt psxy -T -Y-3.5i -R118.5/121/17/20 -JU50/7i -O -K -Ve
 gmt psxy -T -X0i -R118.5/121/17/20 -JU50/7i -O -K -Ve
@@ -10,7 +10,7 @@ gmt pstext -R0/7/0/8.74724 -Jx1i -O -K -N -M -F+a+f+j @GMTAPI@-S-I-D-D-X-N-00000
 gmt psxy -T -Y3.5i -X-2.76946600000000000000i -R118.5/121/17/20 -JU50/7i -O -K -Ve
 gmt psxy -T -X0i -R118.5/121/17/20 -JU50/7i -O -K -Ve
 gmt grdimage topo/intensity.tif -t0 -R118.5/121/17/20 -JU50/7i -O -K -Ve
-gmt grdimage /Users/kylebradley/Dropbox/TectoplotData/WGM2012/BG_resample.nc -C/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/grav.cpt -t50 -R118.5/121/17/20 -JU50/7i -O -K -Ve
+gmt grdimage /Users/kylebradley/Dropbox/TectoplotData/WGM2012/BG_resample.nc -C/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/grav.cpt -t50 -R118.5/121/17/20 -JU50/7i -O -K -Ve
 gmt pscoast -Df -W1/0.5p,black -W2/0.2p,black -Gdarkgreen -A100 -R118.5/121/17/20 -JU50/7i -O -K -Ve
 gmt grdcontour topo/dem.nc -A1000 -C1000 -S100 -W0.1p,black -Q500 -R118.5/121/17/20 -JU50/7i -O -K -Ve
 gmt psxy -A -R118.5/121/17/20 -JU50/7i -O -K -W1.5p,black
@@ -26,13 +26,37 @@ gmt psxy profiles/end_profile_lines.txt -W0.5p,black -R118.5/121/17/20 -JU50/7i 
 gmt psxy profiles/start_profile_lines.txt -W0.5p,black -R118.5/121/17/20 -JU50/7i -O -K -Ve
 gmt psxy profiles/xy_intersect.txt -W0.5p,black -R118.5/121/17/20 -JU50/7i -O -K -Ve
 gmt psxy profiles/all_intersect.txt -St0.1i -Gwhite -W0.7p,black -R118.5/121/17/20 -JU50/7i -O -K -Ve
+gmt pstext -A -Dj3p -F+f12p,Helvetica+jRB+a-38.478 -R118.5/121/17/20 -JU50/7i -O -K -Ve
+gmt pstext -A -Dj3p -F+f12p,Helvetica+jRB+a-38.384 -R118.5/121/17/20 -JU50/7i -O -K -Ve
+gmt pstext -A -Dj3p -F+f12p,Helvetica+jRB+a-38.384 -R118.5/121/17/20 -JU50/7i -O -K -Ve
+gmt psimage -Dx-0.251496i/-3.059i+w7.50299i profiles/all_profiles.eps -R118.5/121/17/20 -JU50/7i -O -K -Ve
+gmt psxy -T -R118.5/121/17/20 -JU50/7i -K -Vn
+gmt psbasemap -Vn -JX7i/2i -X0 -Y9i -Bltrb -R-101.943/115.43/240.232/421.886 --MAP_FRAME_PEN=thinner,black -K -O
+gmt psxy -Vn profiles/P1_grid4_profileenvelope.txt -t50 -R-101.943/115.43/240.232/421.886 -JX7i/2i -O -K -G127/127/127
+gmt psxy -Vn -R-101.943/115.43/240.232/421.886 -JX7i/2i -O -K -t50 -G63/63/63 profiles/P1_grid4_profileq13envelope.txt
+gmt psxy -Vn -R-101.943/115.43/240.232/421.886 -JX7i/2i -O -K -W0.25p,0/0/0 profiles/P1_grid4_profiledatamedian.txt
+gmt psxy -JX7i/2i -R-101.943/115.43/240.232/421.886 -K -O -Si0.1i -Ya1.05556i -W0.5p,0/0/0 -G0/0/0
+gmt psxy -JX7i/2i -R-101.943/115.43/240.232/421.886 -K -O -Si0.1i -Ya1.05556i -W0.5p,0/0/0
+gmt psxy -Vn profiles/P2_grid4_profileenvelope.txt -t50 -R-101.943/115.43/240.232/421.886 -JX7i/2i -O -K -G127/255/127
+gmt psxy -Vn -R-101.943/115.43/240.232/421.886 -JX7i/2i -O -K -t50 -G63/255/63 profiles/P2_grid4_profileq13envelope.txt
+gmt psxy -Vn -R-101.943/115.43/240.232/421.886 -JX7i/2i -O -K -W0.25p,0/255/0 profiles/P2_grid4_profiledatamedian.txt
+gmt psxy -JX7i/2i -R-101.943/115.43/240.232/421.886 -K -O -Si0.1i -Ya1.05556i -W0.5p,0/255/0 -G0/255/0
+gmt psxy -JX7i/2i -R-101.943/115.43/240.232/421.886 -K -O -Si0.1i -Ya1.05556i -W0.5p,0/255/0
+gmt psxy -Vn profiles/P3_grid4_profileenvelope.txt -t50 -R-101.943/115.43/240.232/421.886 -JX7i/2i -O -K -G255/127/127
+gmt psxy -Vn -R-101.943/115.43/240.232/421.886 -JX7i/2i -O -K -t50 -G255/63/63 profiles/P3_grid4_profileq13envelope.txt
+gmt psxy -Vn -R-101.943/115.43/240.232/421.886 -JX7i/2i -O -K -W0.25p,255/0/0 profiles/P3_grid4_profiledatamedian.txt
+gmt psxy -JX7i/2i -R-101.943/115.43/240.232/421.886 -K -O -Si0.1i -Ya1.05556i -W0.5p,255/0/0 -G255/0/0
+gmt psxy -JX7i/2i -R-101.943/115.43/240.232/421.886 -K -O -Si0.1i -Ya1.05556i -W0.5p,255/0/0
+gmt psxy -JX7i/2i -R-101.943/115.43/240.232/421.886 -K -O -St0.1i -Ya1.05556i -W0.7p,black -Gwhite
+gmt psbasemap -Vn -BtESW+t -Baf '-Bx+lDistance (km)' --FONT_TITLE=10p,Helvetica,black --MAP_FRAME_PEN=thinner,black -R-101.943/115.43/240.232/421.886 -JX7i/2i -O -K
+gmt psxy -T -R-101.943/115.43/240.232/421.886 -JX7i/2i -O -Vn
 gmt psbasemap -Bxa0.2 -Bya0.2 '-BWESN+t"Bouguer anomaly"' -R118.5/121/17/20 -JU50/7i -O -K -Ve
 gmt psimage -Dx0i/9.86764666666666666666i+w2.45775i maplegend.eps -R118.5/121/17/20 -JU50/7i -O -K -Ve
 gmt psxy -T -R118.5/121/17/20 -JU50/7i -X1i -Yc -K -Ve
 gmt pslegend datasourceslegend.txt -Dx0.0i/9.70098i+w2i+w7i+jBL -C0.05i/0.05i -JU50/7i -R118.5/121/17/20 -O -K -Ve
 gmt pstext -R0/7/0/8.74724 -Jx1i -O -K -N -M -F+a+f+j @GMTAPI@-S-I-D-D-X-N-000001 --GMT_HISTORY=false
 gmt pslegend legendbars.txt -Dx0i/9.86764666666666666666i+w2i+jBL -C0.05i/0.05i -JU50/7i -R118.5/121/17/20 -O -K -Ve
-gmt psscale -C/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/topo.cpt -O -K -Dx1i/0.602778i+w1.6i/0.1i+malu+h+jTC '-Bxa2f1+lElevation (km)' -W0.001 --GMT_HISTORY=false
-gmt psscale -C/Users/kylebradley/Dropbox/scripts/tectoplot/examples/tempfiles_to_delete/cpts/grav.cpt -O -K -Dx1i/0.226389i+w1.6i/0.1i+malu+h+jTC '-Bxa100f50+lBG gravity (mgal)' --GMT_HISTORY=false
+gmt psscale -C/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/topo.cpt -O -K -Dx1i/0.602778i+w1.6i/0.1i+malu+h+jTC '-Bxa2f1+lElevation (km)' -W0.001 --GMT_HISTORY=false
+gmt psscale -C/Users/kylebradley/Dropbox/scripts/tectoplot-examples/examples/tempfiles_to_delete/cpts/grav.cpt -O -K -Dx1i/0.226389i+w1.6i/0.1i+malu+h+jTC '-Bxa100f50+lBG gravity (mgal)' --GMT_HISTORY=false
 gmt psxy -T -R118.5/121/17/20 -JU50/7i -O -Ve
 gmt psxy -T -R118.5/121/17/20 -JU50/7i -O -Ve
